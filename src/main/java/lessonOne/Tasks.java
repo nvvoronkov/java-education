@@ -77,13 +77,6 @@ public class Tasks {
         return false;
     }
 
-    public boolean randomGame() {
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        int userInt = scanner.nextInt();
-        return userInt == random.nextInt(9);
-    }
-
     public void printMenu() {
         Scanner scanner = new Scanner(System.in);
         int attemptsLeft = 3;
