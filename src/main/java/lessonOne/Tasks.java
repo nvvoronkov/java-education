@@ -86,16 +86,29 @@ public class Tasks {
 
     public void printMenu() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        int attemptsLeft = 3;
+        Random random = new Random();
+        int randomNumber = random.nextInt(10);
+        boolean attempt = false;
+
+        while (attemptsLeft > 0 && !attempt) {
             System.out.println("Введите число от 0 до 9");
-            for (int i = 3; i >= 0; i--) {
-                if (randomGame()) {
-                    System.out.println("Вы угадали!");
-                    break;
-                } else {
-                    System.out.println("Неправильно(\nОсталось " + (i - 1) + " попыток!");
-                }
+            int userNumber = scanner.nextInt();
+            if (userNumber == randomNumber) {
+                System.out.println("Вы угадали!");
+                attempt = true;
+            } else if (randomNumber < userNumber) {
+                attemptsLeft--;
+                System.out.println("Загаданое число меньше, чем вы предполагаете." +
+                        "\nОсталось " + attemptsLeft + " попыток!");
+            } else {
+                attemptsLeft--;
+                System.out.println("Загаданое число больше вашего предположения." +
+                        "\nОсталось  " + attemptsLeft + " попыток!");
             }
+        }
+        if (!attempt) {
+            System.out.println("Вы не отгадали за 3 попытки. Загаданое число было " + randomNumber);
         }
     }
 }

@@ -24,13 +24,15 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         tasks.printMenu();
-        System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
-        switch (scanner.nextInt()) {
-            case (1):
-                tasks.printMenu();
-                break;
-            case (2):
-                break;
+        while (true) {
+            System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+            switch (scanner.nextInt()) {
+                case (1):
+                    tasks.printMenu();
+                    break;
+                case (2):
+                    break;
+            }
         }
     }
 }
