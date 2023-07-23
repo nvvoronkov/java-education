@@ -104,4 +104,16 @@ public class Tasks {
             System.out.println("Вы не отгадали за 3 попытки. Загаданое число было " + randomNumber);
         }
     }
-}
+
+    //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+    public void fib(int n) {
+        int startInt = 0;
+        int secondInt = 1;
+        while(secondInt < n) {
+            int temp = secondInt + startInt;
+            startInt = secondInt;
+            System.out.println(secondInt);
+            secondInt = temp;
+        }
+    }
+ }

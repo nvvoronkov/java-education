@@ -23,16 +23,17 @@ public class Main {
         System.out.println(tasks.cheakMaassive(integers1));
 
         Scanner scanner = new Scanner(System.in);
-        tasks.printMenu();
-        while (true) {
-            System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
-            switch (scanner.nextInt()) {
-                case (1):
-                    tasks.printMenu();
-                    break;
-                case (2):
-                    break;
-            }
-        }
+        //tasks.printMenu();
+//        while (true) {
+//            System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+//            switch (scanner.nextInt()) {
+//                case (1):
+//                    tasks.printMenu();
+//                    break;
+//                case (2):
+//                    break;
+//            }
+//        }
+        tasks.fib(10);
     }
 }
