@@ -1,11 +1,23 @@
-package lesson_two;
+package lesson_two.animals;
 
-public class Cat {
+public class Cat extends Animal {
 
-    private final String name;
-    private final int appetite;
+    private String name;
+    private int appetite;
     private boolean satiety;
+    private final int runDistance = 200;
 
+    public Cat(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+    }
+
+    @Override
+    public void run(int distance) {
+        if (distance < runDistance) {
+            System.out.println(getName() + " ran " + distance);
+        }
+    }
     public String getName() {
         return name;
     }
@@ -19,11 +31,6 @@ public class Cat {
 
     public void setSatiety(boolean satiety) {
         this.satiety = satiety;
-    }
-
-    public Cat(String name, int appetite) {
-        this.name = name;
-        this.appetite = appetite;
     }
 
     public void eat(Plate p) {

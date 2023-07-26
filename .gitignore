@@ -1,18 +1,24 @@
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.properties
+*.cmd
+hs_err_pid*
+out/
 target/
+/target/
+/mvnw
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-
-### Eclipse ###
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -20,6 +26,12 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
 ### NetBeans ###
 /nbproject/private/
@@ -34,5 +46,7 @@ build/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
-.DS_Store
+*.db
+db/*
+/.mvn/
+/mvnw/

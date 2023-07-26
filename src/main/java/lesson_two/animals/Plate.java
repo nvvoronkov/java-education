@@ -1,4 +1,4 @@
-package lesson_two;
+package lesson_two.animals;
 
 public class Plate {
 

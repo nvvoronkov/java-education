@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/Plate.java" afterDir="false" />
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Fix: TasksOne and TasksOneTest">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/CatTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/PlateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/Plate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Plate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/TasksTwo.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,10 +46,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="lesson_two" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
