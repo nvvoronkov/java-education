@@ -8,13 +8,15 @@ public class Cat extends Animal {
     private final int runDistance = 200;
 
     public Cat(String name, int appetite) {
+        System.out.println(this);
         this.name = name;
         this.appetite = appetite;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
+
     public int getAppetite() {
         return appetite;
     }
@@ -40,7 +42,11 @@ public class Cat extends Animal {
     }
 
     public void eat(Plate p) {
-        setSatiety(p.decreaseFood(appetite));
+        this.setSatiety(p.decreaseFood(this.appetite));
+    }
+
+    public static void eatStatic(Plate p, Cat cat) {
+        cat.setSatiety(p.decreaseFood(cat.appetite));
     }
 
     public void catInfo() {
