@@ -1,21 +1,18 @@
 package lesson_two.manual_five;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.experimental.FieldDefaults;
 
 @Data
 @AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Person {
-    int id;
-    String name;
-    String post;
-    String email;
-    String telephone;
-    int salary;
-    int age;
+    private int id;
+    private String name;
+    private String post;
+    private String email;
+    private String telephone;
+    private int salary;
+    private int age;
 
     public void getInfoOfColleague(Person person) {
         System.out.println(person.toString());

@@ -46,4 +46,8 @@ public class Cat extends Animal {
     public void catInfo() {
         System.out.println("cat " + getName() + " satiety: " + isSatiety());
     }
+
+    public void testCat() {
+        System.out.println("mur mur");
+    }
 }
