@@ -12,12 +12,6 @@ public class Cat extends Animal {
         this.appetite = appetite;
     }
 
-    @Override
-    public void run(int distance) {
-        if (distance < runDistance) {
-            System.out.println(getName() + " ran " + distance);
-        }
-    }
     public String getName() {
         return name;
     }
@@ -31,6 +25,18 @@ public class Cat extends Animal {
 
     public void setSatiety(boolean satiety) {
         this.satiety = satiety;
+    }
+
+    @Override
+    public void run(int distance) {
+        if (distance < runDistance) {
+            System.out.println(getName() + " ran " + distance);
+        }
+    }
+
+    @Override
+    public void swim(int distance) {
+        System.out.println("Cats cant swim");
     }
 
     public void eat(Plate p) {

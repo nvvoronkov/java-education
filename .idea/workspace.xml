@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Fix: TasksOne and TasksOneTest">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/CatTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/PlateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: new code for 3 lesson">
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/animals/CatTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/animals/DogTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_two/animals/PlateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/Plate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Plate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/TasksTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/CatTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/PlateTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -42,21 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lesson_two.animals" />
       <recent name="lesson_two" />
     </key>
   </component>
@@ -69,6 +66,15 @@
       <option name="presentableId" value="Default" />
       <updated>1689786646180</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add: new code for 3 lesson">
+      <option name="closed" value="true" />
+      <created>1690383080295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690383080295</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add: new code for 3 lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: new code for 3 lesson" />
   </component>
 </project>

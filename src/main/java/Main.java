@@ -18,7 +18,7 @@ public class Main {
         int[][] mas = new int[5][5];
         tasks.fillDiagonal(mas);
 
-        System.out.println(tasks.findMinAndMax(integers1));
+        System.out.println(Arrays.toString(tasks.findMinAndMax(integers1)));
 
         System.out.println(tasks.checkArray(integers1));
 
