@@ -1,9 +1,9 @@
 package lesson_two.animals;
 
 public class Dog extends Animal {
-    private String name;
     private final int swimDistance = 10;
     private final int runDistance = 500;
+    private String name;
 
     public Dog(String name) {
         this.name = name;
