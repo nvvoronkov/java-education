@@ -6,9 +6,10 @@ public class Cat extends Animal {
     private int appetite;
     private boolean satiety;
     private final int runDistance = 200;
+    private static int countCat;
 
     public Cat(String name, int appetite) {
-        System.out.println(this);
+        super();
         this.name = name;
         this.appetite = appetite;
     }

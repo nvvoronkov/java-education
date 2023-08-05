@@ -1,5 +1,7 @@
 package lesson_one;
 
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -12,7 +14,7 @@ public class TasksOneTest {
         Byte[] inputArray = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         Byte[] expected = {0, 0,1, 1, 0, 1, 0, 0, 1, 1};
         tasks.invertArray(inputArray);
-        org.assertj.core.api.Assertions.assertThat(expected).isEqualTo(inputArray);
+        Assertions.assertThat(expected).isEqualTo(inputArray);
     }
 
     @Test
@@ -20,7 +22,7 @@ public class TasksOneTest {
         int[] input = new int[8];
         int[] expected = {0, 3, 6, 9, 12, 15, 18, 21};
         int[] actual = tasks.addInteger(input);
-        org.assertj.core.api.Assertions.assertThat(expected).isEqualTo(actual);
+        Assertions.assertThat(expected).isEqualTo(actual);
     }
 
     @Test
@@ -28,7 +30,7 @@ public class TasksOneTest {
         int[] integers = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] expected = {2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2};
         int[] actual = tasks.findLessSix(integers);
-        org.assertj.core.api.Assertions.assertThat(expected).isEqualTo(actual);
+        Assertions.assertThat(expected).isEqualTo(actual);
     }
 
     @Test
@@ -42,7 +44,7 @@ public class TasksOneTest {
                 {1, 0, 0, 0, 1}
         };
         tasks.fillDiagonal(arr);
-        org.assertj.core.api.Assertions.assertThat(expected).isEqualTo(arr);
+        Assertions.assertThat(expected).isEqualTo(arr);
     }
 
     @Test
@@ -50,7 +52,7 @@ public class TasksOneTest {
         int[] massive = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] expected = {1, 11};
         int[] actual = tasks.findMinAndMax(massive);
-        org.assertj.core.api.Assertions.assertThat(expected).isEqualTo(actual);
+        Assertions.assertThat(expected).isEqualTo(actual);
     }
 
     @Test
@@ -61,8 +63,8 @@ public class TasksOneTest {
         boolean expected2 = false;
         boolean actual1 = tasks.checkArray(massive1);
         boolean actual2 = tasks.checkArray(massive2);
-        org.assertj.core.api.Assertions.assertThat(expected1).isEqualTo(actual1);
-        org.assertj.core.api.Assertions.assertThat(expected2).isEqualTo(actual2);
+        Assertions.assertThat(expected1).isEqualTo(actual1);
+        Assertions.assertThat(expected2).isEqualTo(actual2);
     }
 
     @Test
@@ -71,6 +73,5 @@ public class TasksOneTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         tasks.gameWithRandom();
-        //org.assertj.core.api.Assertions.assertThat(input).isEqualTo();
     }
 }

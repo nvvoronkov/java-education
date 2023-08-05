@@ -5,8 +5,16 @@ public class Dog extends Animal {
     private final int runDistance = 500;
     private String name;
 
+    private static int count;
+
     public Dog(String name) {
+        super();
+        count++;
         this.name = name;
+    }
+
+    public static int getCount() {
+        return count;
     }
 
     public String getName() {

@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: new files pach shape and tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArrayDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArraySizeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_three/task_one/CourseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_three/task_two/TaskTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_one/TasksOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson_one/TasksOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/animals/CatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson_two/animals/CatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,10 +44,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2SneCTiKuVZyFIelgeEtrC01JIC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,16 +69,21 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="lesson_three.task_two" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lesson_three.task_one" />
+      <recent name="lesson_three.task_two" />
       <recent name="lesson_three.shapes" />
       <recent name="lesson_two.animals" />
       <recent name="lesson_two" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CourseTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.Main" />
       <module name="education" />
@@ -85,46 +97,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="lesson_three.task_two.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson_three.task_two.Main" />
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="PATTERN" value="lesson_three.task_two.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.CircleTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="education" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lesson_three.task_one.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lesson_three.task_one" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.CourseTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RectangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="PATTERN" value="lesson_three.task_two.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.RectangleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShapeManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.ShapeManagerTest" />
+      <option name="PACKAGE_NAME" value="lesson_three.task_two" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.task_two.TaskTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CourseTest" />
+        <item itemvalue="JUnit.TaskTest" />
+        <item itemvalue="Application.lesson_three.task_two.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TriangleTest" />
-        <item itemvalue="JUnit.ShapeManagerTest" />
-        <item itemvalue="JUnit.RectangleTest" />
-        <item itemvalue="JUnit.CircleTest" />
       </list>
     </recent_temporary>
   </component>

@@ -1,5 +1,6 @@
 package lesson_two.animals;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -24,13 +25,14 @@ class CatTest {
         Plate plate = new Plate(10);
         cat.eat(plate);
         assertTrue(cat.isSatiety());
+        Assertions.assertThat(cat.isSatiety()).isFalse();
     }
     @Test
     void eat_WithNotEnoughFood_ShouldSetSatietyToFalse() {
         Cat cat = new Cat("Tom", 10);
         Plate plate = new Plate(5);
         cat.eat(plate);
-        assertFalse(cat.isSatiety());
+        Assertions.assertThat(cat.isSatiety()).isFalse();
     }
     @Test
     void catInfo_ShouldPrintCatInfo() {

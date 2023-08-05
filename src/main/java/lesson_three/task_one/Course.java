@@ -8,7 +8,7 @@ public class Course {
             if (new Random().nextBoolean()) {
                 System.out.println(team.getTeamArray()[i] + " crossed the wall");
             } else {
-                System.out.println(team.getTeamArray()[i] + " did't cross the wall");
+                System.out.println(team.getTeamArray()[i] + " didn't cross the wall");
                 team.getTeamArray()[i] = null;
             }
         }
@@ -20,7 +20,7 @@ public class Course {
                 if (new Random().nextBoolean()) {
                     System.out.println(team.getTeamArray()[i] + " crossed the river");
                 } else {
-                    System.out.println(team.getTeamArray()[i] + " did't cross the river");
+                    System.out.println(team.getTeamArray()[i] + " didn't cross the river");
                     team.getTeamArray()[i] = null;
                 }
             }
