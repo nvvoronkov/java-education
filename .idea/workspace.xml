@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: Unit tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/CircleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/RectangleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/TriangleTest.java" afterDir="false" />
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: new files pach shape and tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Team.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_one/TasksOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson_one/TasksOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +25,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2SneCTiKuVZyFIelgeEtrC01JIC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,7 +57,8 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -62,13 +71,13 @@
       <recent name="lesson_two" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest">
-    <configuration name="lesson_three.shapes.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.Main" />
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="PATTERN" value="lesson_three.task_one.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TriangleTest" />
         <item itemvalue="JUnit.ShapeManagerTest" />
         <item itemvalue="JUnit.RectangleTest" />
         <item itemvalue="JUnit.CircleTest" />
-        <item itemvalue="Application.lesson_three.shapes.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690612185506</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add: new files pach shape and tests">
+      <option name="closed" value="true" />
+      <created>1690800116619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690800116619</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +205,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add: new code for 3 lesson" />
     <MESSAGE value="Add: Unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: Unit tests" />
+    <MESSAGE value="Add: new files pach shape and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: new files pach shape and tests" />
   </component>
 </project>

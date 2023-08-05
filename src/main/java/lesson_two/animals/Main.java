@@ -11,7 +11,7 @@ public class Main {
             animal = new Cat("cat", 1);
         }
 
-        Cat.getStaticName();
+        //Cat.getStaticName();
 
         if (animal instanceof Cat cat) {
             String name = cat.getName();
