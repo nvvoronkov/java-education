@@ -5,7 +5,7 @@ public class Cat extends Animal {
     private String name;
     private int appetite;
     private boolean satiety;
-    private final int runDistance = 200;
+    private static final int RUN_DISTANCE = 200;
     private static int countCat;
 
     public Cat(String name, int appetite) {
@@ -31,8 +31,8 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void run(int distance) {
-        if (distance < runDistance) {
+    public void run(final int distance) {
+        if (distance < RUN_DISTANCE) {
             System.out.println(getName() + " ran " + distance);
         }
     }

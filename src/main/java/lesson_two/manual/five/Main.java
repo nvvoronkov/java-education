@@ -1,4 +1,4 @@
-package lesson_two.manual_five;
+package lesson_two.manual.five;
 
 public class Main {
     public static void main(String[] args) {

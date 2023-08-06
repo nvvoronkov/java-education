@@ -1,9 +1,10 @@
 package lesson_three.shapes;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ShapeManager {
-    private final ArrayList<Shape> shapes = new ArrayList<>();
+    private final List<Shape> shapes = new LinkedList<>();
 
     public void addShape(Shape shape) {
         shapes.add(shape);

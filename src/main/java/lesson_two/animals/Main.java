@@ -1,8 +1,13 @@
 package lesson_two.animals;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+
 import java.util.Random;
 
-public class Main {
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+public final class Main {
+
     public static void main(String[] args) {
         Animal animal;
         if (new Random().nextBoolean()) {

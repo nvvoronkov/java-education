@@ -1,4 +1,4 @@
-package lesson_two.manual_five;
+package lesson_two.manual.five;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ public class Person {
     private int salary;
     private int age;
 
-    public void getInfoOfColleague(Person person) {
+    public void getInfoOfColleague(final Person person) {
         System.out.println(person.toString());
     }
 }

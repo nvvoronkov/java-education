@@ -8,12 +8,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Triangle implements Shape {
+    public static final double COEFFICIENT = 0.5;
     private double base;
     private double height;
 
     @Override
     public double getArea() {
-        return height * base * 0.5;
+        return height * base * COEFFICIENT;
     }
 
     @Override

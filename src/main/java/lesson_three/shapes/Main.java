@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         ShapeManager manager = new ShapeManager();
 
-        Circle circle = new Circle(12);
-        Rectangle rectangle = new Rectangle(7, 10);
-        Triangle triangle = new Triangle(10, 5);
+        Shape circle = new Circle(12);
+        Shape rectangle = new Rectangle(7, 10);
+        Shape triangle = new Triangle(10, 5);
 
         manager.addShape(circle);
         manager.addShape(rectangle);
