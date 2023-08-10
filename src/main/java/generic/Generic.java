@@ -1,8 +1,12 @@
 package generic;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Generic {
     public static void main(String[] args) {
-        Map<String, Admin> integerUserMap = new Map<>();
+        final Map<String, Admin> integerUserMap = new Map<>();
 
     }
 

@@ -4,30 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/checkstyle-suppressions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/generic/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/generic/Generic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/generic/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/generic/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/generic/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/FileNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: new files to lesson three">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/ShapeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/ShapeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArrayDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArrayDataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArraySizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArraySizeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual/five/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/manual_five/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson_two/manual/five/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Generic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/generic/Generic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_one/TasksOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/one/TasksOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/ShapeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/ShapeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_one/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_one/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_one/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_one/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/FileNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/FileNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArrayDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/MyArrayDataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/MyArraySizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/MyArraySizeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_three/task_two/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/three/task_two/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/CustomDog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/CustomDog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Elephant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Elephant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/animals/Plate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/animals/Plate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/manual/five/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/manual/five/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson_two/manual/five/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/two/manual/five/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_one/TasksOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/one/TasksOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/CircleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/shapes/CircleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/RectangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/shapes/RectangleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/ShapeManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/shapes/ShapeManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/shapes/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/shapes/TriangleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/task_one/CourseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/task_one/CourseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_three/task_two/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/three/task_two/TaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/animals/CatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/two/animals/CatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/animals/DogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/two/animals/DogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lesson_two/animals/PlateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lesson/two/animals/PlateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,83 +66,44 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2SneCTiKuVZyFIelgeEtrC01JIC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/igorsimakov/IdeaProjects/java-education",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="lesson_three.task_two" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="lesson_three.task_one" />
-      <recent name="lesson_three.task_two" />
       <recent name="lesson_three.shapes" />
       <recent name="lesson_two.animals" />
       <recent name="lesson_two" />
     </key>
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean package" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.lesson_three.task_two.Main">
-    <configuration name="Generic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="generic.Generic" />
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="generic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.Main" />
       <module name="education" />
@@ -139,44 +117,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="lesson_three.task_two.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lesson_three.task_two.Main" />
+    <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.task_two.*" />
+          <option name="PATTERN" value="lesson_three.shapes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CourseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson_three.task_one.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.task_one" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.CourseTest" />
+      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.CircleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RectangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.task_two.*" />
+          <option name="PATTERN" value="lesson_three.shapes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.task_two" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.task_two.TaskTest" />
+      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.RectangleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShapeManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="education" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.ShapeManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TriangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="education" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
+      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.TriangleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.lesson_three.task_two.Main" />
-        <item itemvalue="Application.Generic" />
-        <item itemvalue="JUnit.CourseTest" />
-        <item itemvalue="JUnit.TaskTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TriangleTest" />
+        <item itemvalue="JUnit.ShapeManagerTest" />
+        <item itemvalue="JUnit.RectangleTest" />
+        <item itemvalue="JUnit.CircleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689786646180</updated>
-      <workItem from="1691309087491" duration="4581000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new code for 3 lesson">
       <option name="closed" value="true" />
@@ -226,11 +220,16 @@
       <option name="project" value="LOCAL" />
       <updated>1690800116619</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add: new files to lesson three">
+      <option name="closed" value="true" />
+      <created>1691257847053</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691257847053</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -247,6 +246,18 @@
     <MESSAGE value="Add: new code for 3 lesson" />
     <MESSAGE value="Add: Unit tests" />
     <MESSAGE value="Add: new files pach shape and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: new files pach shape and tests" />
+    <MESSAGE value="Add: new files to lesson three" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: new files to lesson three" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lesson/two/animals/Plate.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
