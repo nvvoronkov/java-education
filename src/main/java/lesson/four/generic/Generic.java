@@ -1,4 +1,4 @@
-package generic;
+package lesson.four.generic;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

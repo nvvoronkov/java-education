@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="Add: new files for 2 task">
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/four/task/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/four/task/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/four/task/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/four/task/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/four/task/Orange.java" afterDir="false" />
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="fix generics">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/CrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/four/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algoritms/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Generic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Generic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/generic/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +59,19 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "copyright"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,7 +84,25 @@
       <recent name="lesson_two" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson.nio.App" />
+      <module name="education" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lesson.nio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.Main" />
       <module name="education" />
@@ -85,32 +116,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="lesson.four.task.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson.four.task.Main" />
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
+          <option name="PATTERN" value="lesson.four.task.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.CircleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RectangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.RectangleTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.lesson.four.task.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TriangleTest" />
         <item itemvalue="JUnit.ShapeManagerTest" />
-        <item itemvalue="JUnit.RectangleTest" />
-        <item itemvalue="JUnit.CircleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691257847053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix generics">
+      <option name="closed" value="true" />
+      <created>1691913217806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691913217806</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,7 +237,8 @@
     <MESSAGE value="Add: Unit tests" />
     <MESSAGE value="Add: new files pach shape and tests" />
     <MESSAGE value="Add: new files to lesson three" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: new files to lesson three" />
+    <MESSAGE value="fix generics" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix generics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,6 +247,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/lesson/two/animals/Plate.java</url>
           <line>25</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lesson/four/task/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lesson/four/task/Main.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lesson/nio/App.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

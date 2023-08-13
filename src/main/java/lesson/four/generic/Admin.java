@@ -1,4 +1,4 @@
-package generic;
+package lesson.four.generic;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

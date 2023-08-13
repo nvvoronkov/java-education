@@ -1,4 +1,4 @@
-package generic;
+package lesson.four.generic;
 
 public class Map<K, V extends Human> {
     private K key;
