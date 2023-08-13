@@ -9,7 +9,7 @@ import java.util.List;
 public class Box<T extends Fruit> {
     private final List<Fruit> boxOfFruits = new ArrayList<>();
 
-    public double getWeight(T fruit) {
+    public double getWeight() {
         if (boxOfFruits.size() == 0) {
             return 0;
         }

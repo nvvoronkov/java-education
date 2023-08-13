@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class Fruit {
-    private double fruitWeight;
+    //private double fruitWeight;
 }
