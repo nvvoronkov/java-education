@@ -6,9 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         int[] array = new int[]{-4, -1, 0, 3, 10};
-        //System.out.println(Arrays.toString(main.squareArray(array)));
         System.out.println(Arrays.toString(main.squareArrayOn(array)));
-
     }
 
     /**
@@ -44,24 +42,21 @@ public class Main {
     }
 
     //[-4,-1,0,3,10]
-
-    public int[] squareArrayOn(int[] arr) {
+    public int[] squareArrayOn(final int[] arr) {
         int[] newArr = new int[arr.length];
         int right = arr.length - 1;
         int left = 0;
+
         for (int i = newArr.length - 1; i != 0; i--) {
-            if (Math.pow(arr[left], 2) > Math.pow(arr[right], 2)) {
-                newArr[i] = (int) Math.pow(arr[left], 2);
-                left++;
-            } else if (Math.pow(arr[left], 2) < Math.pow(arr[right], 2)) {
-                newArr[i] = (int) Math.pow(arr[right], 2);
-                right--;
-            } else if (Math.pow(arr[left], 2) == Math.pow(arr[right], 2)) {
-                newArr[i] = (int) Math.pow(arr[left], 2);
+            double leftSquared = Math.pow(arr[left], 2);
+            double rightSquared = Math.pow(arr[right], 2);
+
+            if (leftSquared >= rightSquared) {
+                newArr[i] = (int) leftSquared;
                 left++;
             } else {
-                newArr[i] = (int) Math.pow(arr[left], 2);
-                left++;
+                newArr[i] = (int) rightSquared;
+                right--;
             }
         }
         return newArr;

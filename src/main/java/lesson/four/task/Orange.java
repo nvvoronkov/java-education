@@ -1,10 +1,10 @@
 package lesson.four.task;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
 public class Orange extends Fruit {
-    //private final double fruitWeight = 1.5;
+    private static final double ORANGE_WEIGHT = 1.5;
+
+    @Override
+    public double getWeight() {
+        return ORANGE_WEIGHT;
+    }
 }

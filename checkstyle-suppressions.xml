@@ -8,5 +8,6 @@
     <suppress files="." checks="DesignForExtension"/>
     <suppress files="." checks="MissingJavadocMethod"/>
     <suppress files="." checks="LineLength"/>
+    <suppress files="." checks="MagicNumber"/>
 
 </suppressions>

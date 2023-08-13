@@ -3,6 +3,9 @@ package algorithms;
 import java.util.Arrays;
 
 public class Main {
+    private Main() {
+    }
+
     public static void main(String[] args) {
         int[] arr = {-4,-1,0,3,10};
         Main.squareArray(arr);
@@ -35,4 +38,7 @@ public class Main {
         Arrays.sort(arr);
         return arr;
     }
+
+    //[1,0,-3,-5,0,2] 0 - не изменение знака => 2
+    //[1,-3,3,-5,0,2] 0 - не изменение знака => 4
 }

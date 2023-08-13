@@ -1,40 +1,34 @@
 package lesson.four.task;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class Box<T extends Fruit> {
-    private final List<Fruit> boxOfFruits = new ArrayList<>();
+    private final List<T> fruits = new ArrayList<>();
+
+    public List<T> getFruits() {
+        return new ArrayList<>(fruits);
+    }
 
     public double getWeight() {
-        if (boxOfFruits.size() == 0) {
-            return 0;
+        return fruits.stream()
+                .mapToDouble(Fruit::getWeight)
+                .sum();
+    }
+
+    public void addFruit(final T fruit) {
+        if (fruits.size() < 3) {
+            fruits.add(fruit);
         }
-        return boxOfFruits.size() * fruit.getFruitWeight();
+        System.out.println("Not space!");
     }
 
-    public void addFruit(T fruit) {
-        boxOfFruits.add(fruit);
-    }
-
-    public boolean compare(Box<?> box) {
+    public boolean compare(final Box<?> box) {
         return this.getWeight() == box.getWeight();
     }
 
-    public void transfer(Box<T> anotherBox) {
-        if (this == anotherBox) {
-            return;
-        }
-        if (boxOfFruits.size() == 0) {
-            return;
-        }
-        if (boxOfFruits.get(0).getClass() != anotherBox.boxOfFruits.get(0).getClass()) {
-            return;
-        }
-        anotherBox.boxOfFruits.addAll(boxOfFruits);
-        boxOfFruits.clear();
+    public void transferInto(final Box<T> anotherBox) {
+        anotherBox.fruits.addAll(fruits);
+        fruits.clear();
     }
 }

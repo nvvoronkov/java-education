@@ -1,11 +1,21 @@
 package lesson.four.task;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Box<Apple> appleBox1 = new Box<>();
         appleBox1.addFruit(new Apple());
         appleBox1.addFruit(new Apple());
         appleBox1.addFruit(new Apple());
+        appleBox1.addFruit(new Apple());
+        appleBox1.addFruit(new Apple());
+
+        System.out.println();
+        List<Apple> fruits = appleBox1.getFruits();
+        fruits.add(new Apple());
+        fruits.add(new Apple());
+        fruits.add(new Apple());
 
         Box<Apple> appleBox2 = new Box<>();
         appleBox2.addFruit(new Apple());
@@ -19,8 +29,12 @@ public class Main {
         System.out.println(appleBox1.compare(appleBox2));
         System.out.println(appleBox1.compare(orangeBox));
 
-        appleBox1.transfer(appleBox2);
-        System.out.println(appleBox1.getWeight(new Apple()));
-        System.out.println(appleBox2.getWeight(new Apple()));
+        appleBox1.transferInto(appleBox2);
+
+        System.out.println(appleBox1.getWeight());
+        System.out.println(appleBox2.getWeight());
+
+        appleBox1.addFruit(new Apple());
+//        appleBox1.getFruits();
     }
 }

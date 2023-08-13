@@ -1,8 +1,5 @@
 package lesson.four.task;
 
-import lombok.Data;
-
-@Data
-public class Fruit {
-    //private double fruitWeight;
+public abstract class Fruit {
+    public abstract double getWeight();
 }
