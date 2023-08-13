@@ -7,10 +7,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] arr = {-4,-1,0,3,10};
+        int[] arr = {-4, -1, 0, 3, 10};
         Main.squareArray(arr);
         System.out.println(Arrays.toString(arr));
+        int[] arr1 = {1,0,-3,-5,0,2};
+        Main.signCount(arr1);
     }
+
     /**
      * Given an integer array nums sorted in non-decreasing order,
      * return an array of the squares of each number sorted in non-decreasing order.
@@ -41,4 +44,22 @@ public class Main {
 
     //[1,0,-3,-5,0,2] 0 - не изменение знака => 2
     //[1,-3,3,-5,0,2] 0 - не изменение знака => 4
+    //[1,0,0,-2] => 1
+
+    public static int signCount(int[] arr) {
+         int temp = arr[0];
+        int count = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                continue;
+            }
+            if (temp < 0 && arr[i] > 0) {
+                count++;
+            } else if (temp > 0 && arr[i] < 0) {
+                count++;
+            }
+            temp = arr[i];
+        }
+        return count;
+    }
 }
