@@ -5,8 +5,8 @@ import lombok.NoArgsConstructor;
 import java.util.Arrays;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class Main {
-    public static void main(String[] args) {
+final public class Main {
+    public static void main(final String[] args) {
         Byte[] bytes = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         TasksOne tasks = new TasksOne();
         tasks.invertArray(bytes);

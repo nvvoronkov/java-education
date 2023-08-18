@@ -2,15 +2,15 @@ package algorithms;
 
 import java.util.Arrays;
 
-public class Main {
+final public class Main {
     private Main() {
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         int[] arr = {-4, -1, 0, 3, 10};
         Main.squareArray(arr);
         System.out.println(Arrays.toString(arr));
-        int[] arr1 = {1,0,-3,-5,0,2};
+        int[] arr1 = {1, 0, -3, -5, 0, 2};
         Main.signCount(arr1);
     }
 
@@ -31,10 +31,9 @@ public class Main {
      * Input: nums = [-7,-3,2,3,11]
      * Output: [4,9,9,49,121]
      *
-     * @param arr
-     * @return
+     *
      */
-    public static int[] squareArray(int[] arr) {
+    public static int[] squareArray(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = arr[i] * arr[i];
         }
@@ -46,7 +45,7 @@ public class Main {
     //[1,-3,3,-5,0,2] 0 - не изменение знака => 4
     //[1,0,0,-2] => 1
 
-    public static int signCount(int[] arr) {
+    public static int signCount(final int[] arr) {
          int temp = arr[0];
         int count = 0;
         for (int i = 1; i < arr.length; i++) {

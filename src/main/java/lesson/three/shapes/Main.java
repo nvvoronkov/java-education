@@ -1,7 +1,11 @@
 package lesson.three.shapes;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Main {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         ShapeManager manager = new ShapeManager();
 
         Shape circle = new Circle(12);

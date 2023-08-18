@@ -1,9 +1,12 @@
 package lesson.two.animals;
 
+import lombok.Getter;
+
+@Getter
 public class Cat extends Animal {
 
-    private String name;
-    private int appetite;
+    private final String name;
+    private final int appetite;
     private boolean satiety;
     private static final int RUN_DISTANCE = 200;
     private static int countCat;
@@ -12,18 +15,6 @@ public class Cat extends Animal {
         super();
         this.name = name;
         this.appetite = appetite;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public int getAppetite() {
-        return appetite;
-    }
-
-    public boolean isSatiety() {
-        return satiety;
     }
 
     public void setSatiety(final boolean satiety) {

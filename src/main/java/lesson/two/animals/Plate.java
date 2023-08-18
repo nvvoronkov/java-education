@@ -1,16 +1,13 @@
 package lesson.two.animals;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Plate {
 
     private int food;
-
-    public void setFood(final int food) {
-        this.food = food;
-    }
-
-    public int getFood() {
-        return food;
-    }
 
     public Plate(final int food) {
         this.food = food;

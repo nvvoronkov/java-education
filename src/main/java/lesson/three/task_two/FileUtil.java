@@ -1,10 +1,14 @@
 package lesson.three.task_two;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.io.File;
 import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FileUtil {
     public static File openFile(final String path) throws FileNotFoundException {
         try {

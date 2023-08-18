@@ -6,7 +6,7 @@ public class MyArrayDataException extends RuntimeException {
         super(message);
     }
 
-    public MyArrayDataException(final String message, Throwable cause) {
+    public MyArrayDataException(final String message, final Throwable cause) {
         super(message, cause);
     }
 

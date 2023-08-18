@@ -3,7 +3,7 @@ package lesson.two.animals;
 public class Dog extends Animal {
     private final int swimDistance = 10;
     private final int runDistance = 500;
-    private String name;
+    private final String name;
 
     private static int count;
 

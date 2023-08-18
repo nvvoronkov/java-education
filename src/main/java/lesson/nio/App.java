@@ -12,7 +12,6 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public class App {
-
     //File, Files, Path, Paths
     @SneakyThrows
     public static void main(String[] args) {

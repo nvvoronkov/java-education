@@ -6,7 +6,7 @@ import java.util.List;
 public class ShapeManager {
     private final List<Shape> shapes = new LinkedList<>();
 
-    public void addShape(Shape shape) {
+    public void addShape(final Shape shape) {
         shapes.add(shape);
     }
 

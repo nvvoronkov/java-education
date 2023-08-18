@@ -7,7 +7,7 @@ public interface CrudRepository<T, K> {
     Optional<T> findById(K id);
 
     //update
-    T save(T t);
+    Optional<User> save(T t);
 
     void delete(K id);
 
