@@ -1,5 +1,8 @@
-package lesson.nio;
+package lesson.nio.service;
 
+import lesson.nio.repository.UserFileRepository;
+import lesson.nio.exception.UserNotFoundException;
+import lesson.nio.model.User;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -9,7 +12,6 @@ public class UserFileService {
     public static final String USER_NOT_FOUND_MESSAGE = "User with id: %d not found";
     private final UserFileRepository userFileRepository;
 
-    //TODO
     public User findById(Long id) {
         return userFileRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(USER_NOT_FOUND_MESSAGE.formatted(id)));

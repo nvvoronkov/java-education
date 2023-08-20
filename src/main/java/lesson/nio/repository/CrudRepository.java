@@ -1,4 +1,6 @@
-package lesson.nio;
+package lesson.nio.repository;
+
+import lesson.nio.model.User;
 
 import java.util.List;
 import java.util.Optional;
