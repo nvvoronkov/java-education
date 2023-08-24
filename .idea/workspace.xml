@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="fix generics">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/CrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/six/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algoritms/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Generic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Generic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/generic/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/generic/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/four/generic/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/repository/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/service/UserFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/service/UserFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/users.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +40,7 @@
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2SneCTiKuVZyFIelgeEtrC01JIC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,25 +48,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Никита/Documents/JavaCode/dev/javaWithIgor&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -103,12 +96,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="education" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lesson_three.task_one.Main" />
       <module name="education" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="lesson_three.task_one.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="algorithms.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithms.Main" />
+      <module name="education" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,43 +142,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.ShapeManagerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TriangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson_three.shapes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson_three.shapes" />
-      <option name="MAIN_CLASS_NAME" value="lesson_three.shapes.TriangleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.algorithms.Main" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.lesson.four.task.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TriangleTest" />
-        <item itemvalue="JUnit.ShapeManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -257,11 +240,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/lesson/four/task/Main.java</url>
           <line>19</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/lesson/nio/App.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -14,17 +14,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-//TODO: BigDecimal разобраться, что это и зачем
-//TODO: Расширить функционал для новой колонки salary
-//TODO: nio vs io
-
-//TODO: Посчитать среднюю зарплату по юзерам старше 30 лет
-//TODO: Просуммировать колонки id, age, salary и посчитать общуюю сумму этих колонок -> BigDecimal
-//TODO: Все Юзеры стоящие на четных id имеют зарплату больше 2000.0 -> true/false
-//TODO: Получить уникальных список имен для всех юзеров начиная с позиции 10
-//TODO: Найти максимальную зарплату по всем юзерам
-
-//TODO: https://leetcode.com/problems/container-with-most-water/
 @RequiredArgsConstructor
 public class UserFileRepository implements CrudRepository<User, Long> {
     private final File file;
@@ -67,7 +56,7 @@ public class UserFileRepository implements CrudRepository<User, Long> {
         }
     }
 
-    public void updateUsers(List<User> users) {
+    public void updateUsers(final List<User> users) {
         try {
             var userLine = UserMapper.toUserLine(users);
             Files.writeString(Paths.get(file.toURI()), userLine, StandardOpenOption.TRUNCATE_EXISTING);

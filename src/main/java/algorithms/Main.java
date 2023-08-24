@@ -7,11 +7,16 @@ final public class Main {
     }
 
     public static void main(final String[] args) {
-        int[] arr = {-4, -1, 0, 3, 10};
-        Main.squareArray(arr);
-        System.out.println(Arrays.toString(arr));
-        int[] arr1 = {1, 0, -3, -5, 0, 2};
-        Main.signCount(arr1);
+//        int[] arr = {-4, -1, 0, 3, 10};
+//        Main.squareArray(arr);
+//        System.out.println(Arrays.toString(arr));
+//        int[] arr1 = {1, 0, -3, -5, 0, 2};
+//        Main.signCount(arr1);
+//        String arr = "hello";
+//        System.out.println(reverseStringArray(arr));
+        int[] arr = {1,8,6,2,5,4,8,3,7};
+        System.out.println(maxSquareOfArray(arr));
+
     }
 
     /**
@@ -30,8 +35,6 @@ final public class Main {
      * <p>
      * Input: nums = [-7,-3,2,3,11]
      * Output: [4,9,9,49,121]
-     *
-     *
      */
     public static int[] squareArray(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -46,7 +49,7 @@ final public class Main {
     //[1,0,0,-2] => 1
 
     public static int signCount(final int[] arr) {
-         int temp = arr[0];
+        int temp = arr[0];
         int count = 0;
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == 0) {
@@ -115,5 +118,50 @@ final public class Main {
             }
         }
         return false;
+    }
+
+    /**
+     * You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+     * <p>
+     * Find two lines that together with the x-axis form a container, such that the container contains the most water.
+     * <p>
+     * Return the maximum amount of water a container can store.
+     * <p>
+     * Notice that you may not slant the container.
+     * <p>
+     * Example 1:
+     * <p>
+     * Input: height = [1,8,6,2,5,4,8,3,7]
+     * Output: 49
+     * Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+     * Example 2:
+     * <p>
+     * Input: height = [1,1]
+     * Output: 1
+     */
+    //цикл найти значение котрое будет больше остальных
+    //пройти цмклом сначал  с left по всем right потом сместить left на 1
+    //
+    //
+    //если левый столбы меньше или равен правого то нужно посчитать площадь по левому иначе площадь по правому
+    //
+    public static double maxSquareOfArray(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        double maxSquare = 0.0;
+        double square;
+        while (left < right) {
+            if (arr[left] <= arr[right]) {
+                square = arr[left] * (right - left);
+                left++;
+            } else {
+                square = arr[right] * (right - left);
+                right--;
+            }
+            if (square > maxSquare) {
+                maxSquare = square;
+            }
+        }
+        return maxSquare;
     }
 }
