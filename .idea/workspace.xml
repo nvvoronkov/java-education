@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="fix generics">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/six/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/repository/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/repository/UserFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/nio/service/UserFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/nio/service/UserFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/users.csv" afterDir="false" />
-    </list>
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="six lesson" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691913217806</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="six lesson">
+      <option name="closed" value="true" />
+      <created>1692875894219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692875894219</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +219,8 @@
     <MESSAGE value="Add: new files pach shape and tests" />
     <MESSAGE value="Add: new files to lesson three" />
     <MESSAGE value="fix generics" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix generics" />
+    <MESSAGE value="six lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="six lesson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
