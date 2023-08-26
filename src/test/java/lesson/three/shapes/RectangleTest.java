@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class RectangleTest {
-    Shape rectangle = new Rectangle(5.0, 5.0);
+    private final Shape rectangle = new Rectangle(5.0, 5.0);
 
     @Test
     void getArea() {

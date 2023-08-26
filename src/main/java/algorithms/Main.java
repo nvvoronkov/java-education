@@ -1,10 +1,11 @@
 package algorithms;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.Arrays;
 
-final public class Main {
-    private Main() {
-    }
+@UtilityClass
+public class Main {
 
     public static void main(final String[] args) {
 //        int[] arr = {-4, -1, 0, 3, 10};
@@ -79,7 +80,7 @@ final public class Main {
      * Output: ["h","a","n","n","a","H"]
      */
     //Hello
-    public static String reverseStringArray(String str) {
+    public static String reverseStringArray(final String str) {
         char[] arr = str.toCharArray();
         int left = 0;
         int right = arr.length - 1;

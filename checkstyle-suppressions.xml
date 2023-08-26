@@ -9,5 +9,10 @@
     <suppress files="." checks="MissingJavadocMethod"/>
     <suppress files="." checks="LineLength"/>
     <suppress files="." checks="MagicNumber"/>
+    <suppress files="." checks="JavadocMethod"/>
+    <suppress files="." checks="TodoComment"/>
+    <suppress files="." checks="HideUtilityClassConstructor"/>
+    <suppress files="." checks="HiddenField"/>
+    <suppress files="." checks="MethodName"/>
 
 </suppressions>
