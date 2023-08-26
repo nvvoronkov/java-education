@@ -21,6 +21,8 @@
         <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
         <lombok.version>1.18.28</lombok.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <okhttp.version>4.9.3</okhttp.version>
+        <jackson-databind.version>2.15.0</jackson-databind.version>
     </properties>
 
     <dependencies>
@@ -39,6 +41,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
         </dependency>
     </dependencies>
 

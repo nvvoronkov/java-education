@@ -1,8 +1,8 @@
 package lesson.nio.service;
 
-import lesson.nio.repository.UserFileRepository;
 import lesson.nio.exception.UserNotFoundException;
 import lesson.nio.model.User;
+import lesson.nio.repository.UserFileRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -27,6 +27,12 @@ public class UserFileService {
     }
 
     public List<User> findAll() {
-        return  userFileRepository.findAll();
+        return userFileRepository.findAll();
+    }
+
+    private List<User> findUsersOver30() {
+        return findAll().stream()
+                .filter(user -> user.getAge() > 30)
+                .toList();
     }
 }

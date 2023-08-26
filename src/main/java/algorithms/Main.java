@@ -14,7 +14,7 @@ final public class Main {
 //        Main.signCount(arr1);
 //        String arr = "hello";
 //        System.out.println(reverseStringArray(arr));
-        int[] arr = {1,8,6,2,5,4,8,3,7};
+        int[] arr = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(maxSquareOfArray(arr));
 
     }
@@ -139,17 +139,12 @@ final public class Main {
      * Input: height = [1,1]
      * Output: 1
      */
-    //цикл найти значение котрое будет больше остальных
-    //пройти цмклом сначал  с left по всем right потом сместить left на 1
-    //
-    //
-    //если левый столбы меньше или равен правого то нужно посчитать площадь по левому иначе площадь по правому
-    //
     public static double maxSquareOfArray(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
-        double maxSquare = 0.0;
-        double square;
+
+        int result = 0;
+        int square;
         while (left < right) {
             if (arr[left] <= arr[right]) {
                 square = arr[left] * (right - left);
@@ -158,10 +153,36 @@ final public class Main {
                 square = arr[right] * (right - left);
                 right--;
             }
-            if (square > maxSquare) {
-                maxSquare = square;
-            }
+            result = Math.max(result, square);
         }
-        return maxSquare;
+        return result;
     }
+
+    //TODO:
+    //Example 2: 2351. First Letter to Appear Twice
+    //
+    //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
+
+    //TODO
+    //A pangram is a sentence where every letter of the English alphabet appears at least once.
+    //
+    //Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+    //
+    //
+    //
+    //Example 1:
+    //
+    //Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
+    //Output: true
+    //Explanation: sentence contains at least one of every letter of the English alphabet.
+    //Example 2:
+    //
+    //Input: sentence = "leetcode"
+    //Output: false
+    //
+    //
+    //Constraints:
+    //
+    //1 <= sentence.length <= 1000
+    //sentence consists of lowercase English letters.
 }
