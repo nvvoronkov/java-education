@@ -3,6 +3,8 @@ package algorithms;
 import lombok.experimental.UtilityClass;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 @UtilityClass
 public class Main {
@@ -15,9 +17,9 @@ public class Main {
 //        Main.signCount(arr1);
 //        String arr = "hello";
 //        System.out.println(reverseStringArray(arr));
-        int[] arr = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        System.out.println(maxSquareOfArray(arr));
-
+//
+        String s = "HELLO";
+        System.out.println(firstDuplicateChar(s));;
     }
 
     /**
@@ -163,6 +165,19 @@ public class Main {
     //Example 2: 2351. First Letter to Appear Twice
     //
     //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
+
+    public char firstDuplicateChar(String s) {
+        char[] charArray = s.toCharArray();
+        Set<Character> set = new HashSet<>();
+        for (char c : charArray) {
+            if (set.contains(c)) {
+                return c;
+            } else {
+                set.add(c);
+            }
+        }
+        return '0';
+    }
 
     //TODO
     //A pangram is a sentence where every letter of the English alphabet appears at least once.
