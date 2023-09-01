@@ -19,7 +19,9 @@ public class Main {
 //        System.out.println(reverseStringArray(arr));
 //
         String s = "HELLO";
-        System.out.println(firstDuplicateChar(s));;
+        System.out.println(firstDuplicateChar(s));
+        String sentence = "thequickbrownfoxjumpsoverthelazydog";
+        System.out.println(isPangram(sentence));
     }
 
     /**
@@ -166,8 +168,8 @@ public class Main {
     //
     //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
 
-    public char firstDuplicateChar(String s) {
-        char[] charArray = s.toCharArray();
+    public char firstDuplicateChar(String string) {
+        char[] charArray = string.toCharArray();
         Set<Character> set = new HashSet<>();
         for (char c : charArray) {
             if (set.contains(c)) {
@@ -201,4 +203,15 @@ public class Main {
     //
     //1 <= sentence.length <= 1000
     //sentence consists of lowercase English letters.
+
+    public boolean isPangram(String sentence) {
+        Set<Character> set = new HashSet<>();
+        char[] charArray = sentence.toCharArray();
+        for (char c : charArray) {
+            if (c >= 'a' && c <= 'z') {
+                set.add(c);
+            }
+        }
+        return set.size() == 26;
+    }
 }
