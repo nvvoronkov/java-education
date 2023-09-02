@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="six lesson">
+    <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="seven lesson">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/HttpExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/HttpExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/client/AccuweatherClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/client/AccuweatherClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/service/AccuweatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/service/AccuweatherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,13 +81,13 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.algorithms.Main">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lesson.nio.App" />
+  <component name="RunManager" selected="Application.HttpExample">
+    <configuration name="HttpExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lesson.http.HttpExample" />
       <module name="education" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lesson.nio.*" />
+          <option name="PATTERN" value="lesson.http.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HttpExample" />
         <item itemvalue="Application.algorithms.Main" />
         <item itemvalue="Application.lesson.four.task.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692963249565</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="seven lesson">
+      <option name="closed" value="true" />
+      <created>1693571005862</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693571005862</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +245,8 @@
     <MESSAGE value="Add: new files to lesson three" />
     <MESSAGE value="fix generics" />
     <MESSAGE value="six lesson" />
-    <option name="LAST_COMMIT_MESSAGE" value="six lesson" />
+    <MESSAGE value="seven lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="seven lesson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
