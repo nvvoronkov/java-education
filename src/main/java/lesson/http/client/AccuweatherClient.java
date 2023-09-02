@@ -12,11 +12,12 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
-//TODO https://developer.accuweather.com/accuweather-current-conditions-api/apis/get/currentconditions/v1/%7BlocationKey%7D
 @RequiredArgsConstructor
 public class AccuweatherClient {
     private static final String URL = "http://dataservice.accuweather.com";
-    private static final String API_KEY = "kRK8UAPHaOphrB82Ida62hMIdFnt36yB";
+
+    //TODO: Сделать утильный класс ReadPropertiesUtils в котором будет метод readProperty
+    //TODO: Создать application.properies файл в которой засунуть API_KEY_NIKITA
     private static final String API_KEY_NIKITA = "rJYdO0tH99qVeV0XeyWQR8Gd9h8cHGbJ";
 
     private final OkHttpClient okHttpClient;
@@ -33,6 +34,8 @@ public class AccuweatherClient {
                 .build()
                 .toString();
 
+        //TODO: Вынести в общий приватный метод с помощью дженерика
+        //TODO: прокидывать в него через TypeReference класс в который нужно десериолизовать
         Request request = new Request.Builder()
                 .url(url)
                 .build();
