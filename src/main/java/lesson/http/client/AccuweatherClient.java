@@ -1,6 +1,7 @@
 package lesson.http.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lesson.http.model.CurrentConditionResponse;
 import lesson.http.model.LocationsRoot;
 import lesson.http.model.TopCityCount;
 import lombok.RequiredArgsConstructor;
@@ -46,4 +47,26 @@ public class AccuweatherClient {
         }
     }
 
+    public CurrentConditionResponse[] getCurrentCondition(final String key) {
+        var url = HttpUrl.parse(URL)
+                .newBuilder()
+                .addPathSegment("currentconditions")
+                .addPathSegment("v1")
+                .addPathSegment(key)
+                .addQueryParameter("apikey", API_KEY_NIKITA)
+                .build()
+                .toString();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        System.out.println("Sending rq... " + request);
+        try (Response response = okHttpClient.newCall(request).execute()) {
+            System.out.println("Received rs... " + response);
+            String json = response.body().string();
+            return objectMapper.readValue(json, CurrentConditionResponse[].class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

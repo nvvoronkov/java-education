@@ -1,6 +1,7 @@
 package lesson.http.service;
 
 import lesson.http.client.AccuweatherClient;
+import lesson.http.model.CurrentConditionResponse;
 import lesson.http.model.LocationsRoot;
 import lesson.http.model.TopCityCount;
 import lombok.RequiredArgsConstructor;
@@ -23,9 +24,22 @@ public class AccuweatherService {
             int choose = scanner.nextInt();
 
             LocationsRoot[] cityLocations = accuweatherClient.getTopCities(TopCityCount.getTopCityCountByValue(choose));
-            System.out.println(Arrays.toString(cityLocations));
 
+            System.out.println("Choose city");
+            Arrays.stream(cityLocations).forEach(System.out::println);
+            String englishName = scanner.next();
+
+            CurrentConditionResponse[] currentCondition = accuweatherClient.getCurrentCondition(
+                    getCityKey(cityLocations, englishName));
+            System.out.println(Arrays.toString(currentCondition));
         }
     }
 
+    public String getCityKey(LocationsRoot[] cityLocations, String englishName) {
+        return Arrays.stream(cityLocations)
+                .filter(locationsRoot -> locationsRoot.getEnglishName().equals(englishName))
+                .map(LocationsRoot::getKey)
+                .findFirst()
+                .orElseThrow();
+    }
 }
