@@ -10,11 +10,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 //TODO https://developer.accuweather.com/accuweather-current-conditions-api/apis/get/currentconditions/v1/%7BlocationKey%7D
 @RequiredArgsConstructor
-public class  AccuweatherClient {
+public class AccuweatherClient {
     private static final String URL = "http://dataservice.accuweather.com";
     private static final String API_KEY = "kRK8UAPHaOphrB82Ida62hMIdFnt36yB";
     private static final String API_KEY_NIKITA = "rJYdO0tH99qVeV0XeyWQR8Gd9h8cHGbJ";
@@ -31,7 +30,7 @@ public class  AccuweatherClient {
                 .addPathSegment(String.valueOf(topCityCount.getValue()))
                 .addQueryParameter("apikey", API_KEY_NIKITA)
                 .build()
-                 .toString();
+                .toString();
 
         Request request = new Request.Builder()
                 .url(url)
@@ -47,10 +46,4 @@ public class  AccuweatherClient {
         }
     }
 
-    public LocationsRoot getCurrentConditions(final String city) {
-        return Arrays.stream(getTopCities(TopCityCount.FIFTY))
-                .filter(locationsRoot -> locationsRoot.getEnglishName().contentEquals(city))
-                .findFirst()
-                .orElseThrow();
-    }
 }

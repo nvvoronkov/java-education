@@ -1,31 +1,65 @@
-import lesson.one.TasksOne;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final public class Main {
+public final class Main {
     public static void main(final String[] args) {
-        Byte[] bytes = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        TasksOne tasks = new TasksOne();
-        tasks.invertArray(bytes);
-        System.out.println(Arrays.toString(bytes));
+        Set<User> userSet = new HashSet<>();
 
-        int[] integers = new int[8];
-        System.out.println(Arrays.toString(tasks.addInteger(integers)));
+        User user = new User(1L, "1");
+        User user1 = new User(1L, "1");
 
-        int[] integers1 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println(Arrays.toString(tasks.findLessSix(integers1)));
+        userSet.add(user);
+        userSet.add(user1);
 
-        int[][] mas = new int[5][5];
-        tasks.fillDiagonal(mas);
+        System.out.println(userSet.contains(user));
+    }
+}
 
-        System.out.println(Arrays.toString(tasks.findMinAndMax(integers1)));
+class User {
+    private Long id;
+    private String name;
 
-        System.out.println(tasks.checkArray(integers1));
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-        tasks.gameWithRandom();
-        tasks.fib(10);
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return Objects.equals(getId(), user.getId())
+                && Objects.equals(getName(), user.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName());
     }
 }

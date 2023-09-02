@@ -1,9 +1,9 @@
 package lesson.http.model;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+import java.util.Arrays;
+
 @Getter
 public enum TopCityCount {
     FIFTY(50),
@@ -11,4 +11,15 @@ public enum TopCityCount {
     HUNDRED_FIFTY(150);
 
     private final int value;
+
+    TopCityCount(int value) {
+        this.value = value;
+    }
+
+    public static TopCityCount getTopCityCountByValue(final int value) {
+        return Arrays.stream(values())
+                .filter(topCityCount -> topCityCount.getValue() == value)
+                .findFirst()
+                .orElseThrow();
+    }
 }

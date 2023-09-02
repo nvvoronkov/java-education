@@ -167,7 +167,6 @@ public class Main {
     //Example 2: 2351. First Letter to Appear Twice
     //
     //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
-
     public char firstDuplicateChar(String string) {
         char[] charArray = string.toCharArray();
         Set<Character> set = new HashSet<>();
@@ -203,7 +202,6 @@ public class Main {
     //
     //1 <= sentence.length <= 1000
     //sentence consists of lowercase English letters.
-
     public boolean isPangram(String sentence) {
         Set<Character> set = new HashSet<>();
         char[] charArray = sentence.toCharArray();
