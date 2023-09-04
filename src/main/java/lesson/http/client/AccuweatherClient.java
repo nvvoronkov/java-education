@@ -1,9 +1,12 @@
 package lesson.http.client;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lesson.http.model.CurrentConditionResponse;
 import lesson.http.model.LocationsRoot;
 import lesson.http.model.TopCityCount;
+import lesson.http.storage.AccuweatherStorage;
+import lesson.http.util.ReadPropertiesUtils;
 import lombok.RequiredArgsConstructor;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -18,10 +21,11 @@ public class AccuweatherClient {
 
     //TODO: Сделать утильный класс ReadPropertiesUtils в котором будет метод readProperty
     //TODO: Создать application.properies файл в которой засунуть API_KEY_NIKITA
-    private static final String API_KEY_NIKITA = "rJYdO0tH99qVeV0XeyWQR8Gd9h8cHGbJ";
+    String apiKey = ReadPropertiesUtils.readProperty("API_KEY_NIKITA");
 
     private final OkHttpClient okHttpClient;
     private final ObjectMapper objectMapper;
+    private final AccuweatherStorage accuweatherStorage;
 
     public LocationsRoot[] getTopCities(final TopCityCount topCityCount) {
         var url = HttpUrl.parse(URL)
@@ -30,24 +34,16 @@ public class AccuweatherClient {
                 .addPathSegment("v1")
                 .addPathSegment("topcities")
                 .addPathSegment(String.valueOf(topCityCount.getValue()))
-                .addQueryParameter("apikey", API_KEY_NIKITA)
+                .addQueryParameter("apikey", apiKey)
                 .build()
                 .toString();
 
         //TODO: Вынести в общий приватный метод с помощью дженерика
         //TODO: прокидывать в него через TypeReference класс в который нужно десериолизовать
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-
-        System.out.println("Sending rq... " + request);
-        try (Response response = okHttpClient.newCall(request).execute()) {
-            System.out.println("Received rs... " + response);
-            String json = response.body().string();
-            return objectMapper.readValue(json, LocationsRoot[].class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        TypeReference<LocationsRoot[]> typeReference = new TypeReference<>() {
+        };
+        accuweatherStorage.save(getRoots(url, typeReference));
+        return getRoots(url, typeReference);
     }
 
     public CurrentConditionResponse[] getCurrentCondition(final String key) {
@@ -56,18 +52,24 @@ public class AccuweatherClient {
                 .addPathSegment("currentconditions")
                 .addPathSegment("v1")
                 .addPathSegment(key)
-                .addQueryParameter("apikey", API_KEY_NIKITA)
+                .addQueryParameter("apikey", apiKey)
                 .build()
                 .toString();
+        TypeReference<CurrentConditionResponse[]> typeReference = new TypeReference<>() {
+        };
+        return getRoots(url, typeReference);
+    }
 
+    private <T> T[] getRoots(String url, TypeReference<T[]> typeReference) {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
+
         System.out.println("Sending rq... " + request);
         try (Response response = okHttpClient.newCall(request).execute()) {
             System.out.println("Received rs... " + response);
             String json = response.body().string();
-            return objectMapper.readValue(json, CurrentConditionResponse[].class);
+            return objectMapper.readValue(json, typeReference);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
