@@ -108,7 +108,7 @@ public class Main {
      * For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13,
      * return true because 4 + 9 = 13.
      */
-    public static boolean hasPairWithSum(int[] arr, int target) {
+    public static boolean hasPairWithSum(final int[] arr, final int target) {
         int left = 0;
         int right = arr.length - 1;
 
@@ -144,7 +144,7 @@ public class Main {
      * Input: height = [1,1]
      * Output: 1
      */
-    public static double maxSquareOfArray(int[] arr) {
+    public static double maxSquareOfArray(final int[] arr) {
         int left = 0;
         int right = arr.length - 1;
 
@@ -167,7 +167,7 @@ public class Main {
     //Example 2: 2351. First Letter to Appear Twice
     //
     //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
-    public char firstDuplicateChar(String string) {
+    public char firstDuplicateChar(final String string) {
         char[] charArray = string.toCharArray();
         Set<Character> set = new HashSet<>();
         for (char c : charArray) {
@@ -202,7 +202,7 @@ public class Main {
     //
     //1 <= sentence.length <= 1000
     //sentence consists of lowercase English letters.
-    public boolean isPangram(String sentence) {
+    public boolean isPangram(final String sentence) {
         Set<Character> set = new HashSet<>();
         char[] charArray = sentence.toCharArray();
         for (char c : charArray) {

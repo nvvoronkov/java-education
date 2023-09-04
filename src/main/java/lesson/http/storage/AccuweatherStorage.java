@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class AccuweatherStorage {
     private List<LocationsRoot> cache = new ArrayList<>();
-    public void save(LocationsRoot[] locationsRoots) {
+    public void save(final LocationsRoot[] locationsRoots) {
         cache.addAll(Arrays.asList(locationsRoots));
     }
 
@@ -18,7 +18,7 @@ public class AccuweatherStorage {
         return cache.toArray(new LocationsRoot[0]);
     }
 
-    public void clean(List<LocationsRoot> cache) {
+    public void clean(final List<LocationsRoot> cache) {
         cache.clear();
     }
 }

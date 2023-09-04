@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 //TODO: https://leetcode.com/problems/container-with-most-water/
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         File file = new File("users.csv");
         UserFileRepository userFileRepository = new UserFileRepository(file);
         UserFileService userFileService = new UserFileService(userFileRepository);

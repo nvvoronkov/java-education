@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient;
 public class HttpExample {
 
     @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         OkHttpClient okHttpClient = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
         AccuweatherStorage accuweatherStorage = new AccuweatherStorage();

@@ -21,7 +21,7 @@ public class AccuweatherClient {
 
     //TODO: Сделать утильный класс ReadPropertiesUtils в котором будет метод readProperty
     //TODO: Создать application.properies файл в которой засунуть API_KEY_NIKITA
-    String apiKey = ReadPropertiesUtils.readProperty("API_KEY_NIKITA");
+    private final String apiKey = ReadPropertiesUtils.readProperty("API_KEY_NIKITA");
 
     private final OkHttpClient okHttpClient;
     private final ObjectMapper objectMapper;
@@ -60,7 +60,7 @@ public class AccuweatherClient {
         return getRoots(url, typeReference);
     }
 
-    private <T> T[] getRoots(String url, TypeReference<T[]> typeReference) {
+    private <T> T[] getRoots(final String url, final TypeReference<T[]> typeReference) {
         Request request = new Request.Builder()
                 .url(url)
                 .build();

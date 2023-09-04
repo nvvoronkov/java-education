@@ -10,7 +10,7 @@ import java.util.Properties;
 public class ReadPropertiesUtils {
     private static final String PROPERTIES_FILE = "application.properties";
 
-    public static String readProperty(String key) {
+    public static String readProperty(final String key) {
         Properties properties = new Properties();
         Path path = Paths.get(PROPERTIES_FILE);
         try (InputStream inputStream = Files.newInputStream(path)) {

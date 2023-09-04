@@ -3,7 +3,7 @@ package lesson.four.task;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Box<Apple> appleBox1 = new Box<>();
         appleBox1.addFruit(new Apple());
         appleBox1.addFruit(new Apple());

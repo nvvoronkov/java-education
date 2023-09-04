@@ -12,7 +12,7 @@ public enum TopCityCount {
 
     private final int value;
 
-    TopCityCount(int value) {
+    TopCityCount(final int value) {
         this.value = value;
     }
 

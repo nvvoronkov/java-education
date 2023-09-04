@@ -19,7 +19,7 @@ public class AccuweatherService {
     private final AccuweatherStorage accuweatherStorage;
 
 
-    private static String getCityKey(LocationsRoot[] cityLocations, String englishName) {
+    private static String getCityKey(final LocationsRoot[] cityLocations, final String englishName) {
         return Arrays.stream(cityLocations)
                 .filter(locationsRoot -> locationsRoot.getEnglishName().equals(englishName))
                 .map(LocationsRoot::getKey)
@@ -55,7 +55,7 @@ public class AccuweatherService {
         } while (choice < 2);
     }
 
-    private CurrentConditionResponse[] getResponses(LocationsRoot[] locationsRoots, Scanner scanner) {
+    private CurrentConditionResponse[] getResponses(final LocationsRoot[] locationsRoots, final Scanner scanner) {
         Arrays.stream(locationsRoots).forEach(System.out::println);
         String englishName = scanner.next();
         CurrentConditionResponse[] currentCondition = accuweatherClient.getCurrentCondition(
