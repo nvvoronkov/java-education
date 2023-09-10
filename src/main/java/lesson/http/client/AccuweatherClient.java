@@ -2,10 +2,10 @@ package lesson.http.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lesson.http.cache.AccuweatherCache;
 import lesson.http.model.CurrentConditionResponse;
 import lesson.http.model.LocationsRoot;
 import lesson.http.model.TopCityCount;
-import lesson.http.storage.AccuweatherStorage;
 import lesson.http.util.ReadPropertiesUtils;
 import lombok.RequiredArgsConstructor;
 import okhttp3.HttpUrl;
@@ -19,15 +19,17 @@ import java.io.IOException;
 public class AccuweatherClient {
     private static final String URL = "http://dataservice.accuweather.com";
 
-    //TODO: Сделать утильный класс ReadPropertiesUtils в котором будет метод readProperty
-    //TODO: Создать application.properies файл в которой засунуть API_KEY_NIKITA
     private final String apiKey = ReadPropertiesUtils.readProperty("API_KEY_NIKITA");
 
     private final OkHttpClient okHttpClient;
     private final ObjectMapper objectMapper;
-    private final AccuweatherStorage accuweatherStorage;
+    private final AccuweatherCache accuweatherCache;
 
     public LocationsRoot[] getTopCities(final TopCityCount topCityCount) {
+        if (accuweatherCache.getCache().containsKey(topCityCount)) {
+            return accuweatherCache.get(topCityCount);
+        }
+
         var url = HttpUrl.parse(URL)
                 .newBuilder()
                 .addPathSegment("locations")
@@ -38,12 +40,9 @@ public class AccuweatherClient {
                 .build()
                 .toString();
 
-        //TODO: Вынести в общий приватный метод с помощью дженерика
-        //TODO: прокидывать в него через TypeReference класс в который нужно десериолизовать
         TypeReference<LocationsRoot[]> typeReference = new TypeReference<>() {
         };
-        accuweatherStorage.save(getRoots(url, typeReference));
-        return getRoots(url, typeReference);
+        return accuweatherCache.save(topCityCount, call(url, typeReference));
     }
 
     public CurrentConditionResponse[] getCurrentCondition(final String key) {
@@ -57,10 +56,10 @@ public class AccuweatherClient {
                 .toString();
         TypeReference<CurrentConditionResponse[]> typeReference = new TypeReference<>() {
         };
-        return getRoots(url, typeReference);
+        return call(url, typeReference);
     }
 
-    private <T> T[] getRoots(final String url, final TypeReference<T[]> typeReference) {
+    private <T> T[] call(final String url, final TypeReference<T[]> typeReference) {
         Request request = new Request.Builder()
                 .url(url)
                 .build();

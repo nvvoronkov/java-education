@@ -1,9 +1,9 @@
 package lesson.http;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lesson.http.cache.AccuweatherCache;
 import lesson.http.client.AccuweatherClient;
 import lesson.http.service.AccuweatherService;
-import lesson.http.storage.AccuweatherStorage;
 import lombok.SneakyThrows;
 import okhttp3.OkHttpClient;
 
@@ -13,10 +13,10 @@ public class HttpExample {
     public static void main(final String[] args) {
         OkHttpClient okHttpClient = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
-        AccuweatherStorage accuweatherStorage = new AccuweatherStorage();
+        AccuweatherCache accuweatherCache = new AccuweatherCache();
 
-        AccuweatherClient accuweatherClient = new AccuweatherClient(okHttpClient, objectMapper, accuweatherStorage);
-        AccuweatherService accuweatherService = new AccuweatherService(accuweatherClient, accuweatherStorage);
+        AccuweatherClient accuweatherClient = new AccuweatherClient(okHttpClient, objectMapper, accuweatherCache);
+        AccuweatherService accuweatherService = new AccuweatherService(accuweatherClient);
 
         accuweatherService.run();
 
