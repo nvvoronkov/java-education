@@ -45,6 +45,7 @@ public class AccuweatherClient {
         return accuweatherCache.save(topCityCount, call(url, typeReference));
     }
 
+    //TODO: Реализовать сохранение истории получениы current conditiion
     public CurrentConditionResponse[] getCurrentCondition(final String key) {
         var url = HttpUrl.parse(URL)
                 .newBuilder()
