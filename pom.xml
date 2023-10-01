@@ -24,6 +24,7 @@
         <okhttp.version>4.9.3</okhttp.version>
         <jackson-databind.version>2.15.0</jackson-databind.version>
         <postgresql.version>42.5.4</postgresql.version>
+        <spring-jdbc.version>6.0.11</spring-jdbc.version>
     </properties>
 
     <dependencies>
@@ -57,6 +58,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring-jdbc.version}</version>
         </dependency>
     </dependencies>
 

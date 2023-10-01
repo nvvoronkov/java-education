@@ -9,11 +9,10 @@ import java.sql.SQLException;
 @UtilityClass
 public class DbConnectionUtils {
 
-
     public static Connection getConnection() {
-        String url = "jdbc:postgresql://localhost:5432/http";
-        String user = "igorsimakov";
-        String password = "admin";
+        String url = ReadPropertiesUtils.readProperty("DB_URL");
+        String user = ReadPropertiesUtils.readProperty("DB_USER");
+        String password = ReadPropertiesUtils.readProperty("DB_PASSWORD");
 
         try {
             return DriverManager.getConnection(url, user, password);
@@ -21,5 +20,4 @@ public class DbConnectionUtils {
             throw new RuntimeException(e);
         }
     }
-
 }

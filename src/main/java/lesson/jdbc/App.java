@@ -22,6 +22,11 @@ public class App {
                         email VARCHAR (255) UNIQUE NOT NULL,
                         created_on TIMESTAMP NOT NULL
                     );
+                    CREATE TABLE IF NOT EXISTS history (
+                        id serial PRIMARY KEY,
+                        username VARCHAR (50) UNIQUE NOT NULL,
+                        email VARCHAR (255) UNIQUE NOT NULL,
+                        created_on TIMESTAMP NOT NULL
                     """;
             var statement = connection.createStatement();
             statement.executeUpdate(sqlQuery);

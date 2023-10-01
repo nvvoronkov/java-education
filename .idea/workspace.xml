@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="seven lesson">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/http/mapper/HistoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/http/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/http/model/entity/HistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lesson/http/model/entity/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/HttpExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/HttpExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/client/AccuweatherClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/client/AccuweatherClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/service/AccuweatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/service/AccuweatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/util/DbConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/util/DbConnectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http/util/ReadPropertiesUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http/util/ReadPropertiesUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/jdbc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/jdbc/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,12 +68,15 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="lesson_three.shapes" />
@@ -224,7 +232,39 @@
       <option name="project" value="LOCAL" />
       <updated>1693571005862</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="seven lesson">
+      <option name="closed" value="true" />
+      <created>1693652532932</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693652532932</updated>
+    </task>
+    <task id="LOCAL-00010" summary="seven lesson">
+      <option name="closed" value="true" />
+      <created>1693659548890</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693659548890</updated>
+    </task>
+    <task id="LOCAL-00011" summary="seven lesson">
+      <option name="closed" value="true" />
+      <created>1693826215701</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693826215701</updated>
+    </task>
+    <task id="LOCAL-00012" summary="seven lesson">
+      <option name="closed" value="true" />
+      <created>1693826806027</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693826806027</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,5 +308,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
