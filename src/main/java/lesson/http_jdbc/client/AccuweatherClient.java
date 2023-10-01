@@ -1,12 +1,12 @@
-package lesson.http.client;
+package lesson.http_jdbc.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lesson.http.cache.AccuweatherCache;
-import lesson.http.model.CurrentConditionResponse;
-import lesson.http.model.LocationsRoot;
-import lesson.http.model.TopCityCount;
-import lesson.http.util.ReadPropertiesUtils;
+import lesson.http_jdbc.cache.AccuweatherCache;
+import lesson.http_jdbc.model.dto.CurrentConditionResponse;
+import lesson.http_jdbc.model.dto.LocationsRoot;
+import lesson.http_jdbc.model.dto.TopCityCount;
+import lesson.http_jdbc.util.ReadPropertiesUtils;
 import lombok.RequiredArgsConstructor;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;

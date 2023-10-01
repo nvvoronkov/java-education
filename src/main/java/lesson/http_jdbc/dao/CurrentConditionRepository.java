@@ -1,26 +1,26 @@
-package lesson.http.dao;
+package lesson.http_jdbc.dao;
 
-import lesson.http.model.entity.CurrentConditionEntity;
-import lesson.nio.model.User;
+import lesson.http_jdbc.model.entity.CurrentConditionEntity;
 import lesson.nio.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+//TODO:
 public class CurrentConditionRepository implements CrudRepository<CurrentConditionEntity, Long> {
 
     @Override
-    public Optional<CurrentConditionEntity> findById(Long id) {
+    public Optional<CurrentConditionEntity> findById(final Long id) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<User> save(CurrentConditionEntity currentConditionEntity) {
+    public Optional<CurrentConditionEntity> save(final CurrentConditionEntity currentConditionEntity) {
         return Optional.empty();
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(final Long id) {
 
     }
 

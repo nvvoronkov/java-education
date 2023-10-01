@@ -1,4 +1,4 @@
-package lesson.http.model.entity;
+package lesson.http_jdbc.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class HistoryEntity {
+public class CityEntity {
+    private Long id;
     private String name;
 }

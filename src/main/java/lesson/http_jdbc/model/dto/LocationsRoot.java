@@ -1,4 +1,4 @@
-package lesson.http.model;
+package lesson.http_jdbc.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

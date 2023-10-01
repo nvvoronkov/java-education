@@ -1,8 +1,8 @@
-package lesson.http.service;
+package lesson.http_jdbc.service;
 
-import lesson.http.client.AccuweatherClient;
-import lesson.http.model.LocationsRoot;
-import lesson.http.model.TopCityCount;
+import lesson.http_jdbc.client.AccuweatherClient;
+import lesson.http_jdbc.model.dto.LocationsRoot;
+import lesson.http_jdbc.model.dto.TopCityCount;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
@@ -20,6 +20,7 @@ public class AccuweatherService {
                 .orElseThrow();
     }
 
+    //TODO:
     public void run() {
         Scanner scanner = new Scanner(System.in);
         int choice;

@@ -1,7 +1,7 @@
-package lesson.http.cache;
+package lesson.http_jdbc.cache;
 
-import lesson.http.model.LocationsRoot;
-import lesson.http.model.TopCityCount;
+import lesson.http_jdbc.model.dto.LocationsRoot;
+import lesson.http_jdbc.model.dto.TopCityCount;
 import lombok.Data;
 
 import java.util.HashMap;
