@@ -33,7 +33,6 @@ public class App {
                 .name("example")
                 .build()
         );
-
     }
 
 

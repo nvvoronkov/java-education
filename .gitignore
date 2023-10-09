@@ -135,7 +135,6 @@ buildNumber.properties
 *.log.*
 allure-results
 
-!src/main/resources/application.yml
 /config/
 /k8s-ansible/
 /Dockerfile

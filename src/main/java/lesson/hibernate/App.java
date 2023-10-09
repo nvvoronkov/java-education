@@ -4,7 +4,7 @@ import lesson.hibernate.entity.User;
 import lesson.hibernate.utils.HibernateUtils;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         User user = User.builder()
                 .name("sdasd")
                 .email("sdsa@mail.ru")

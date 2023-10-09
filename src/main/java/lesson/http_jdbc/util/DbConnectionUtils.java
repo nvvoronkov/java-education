@@ -1,6 +1,9 @@
 package lesson.http_jdbc.util;
 
+import lesson.http_jdbc.dao.CityRepository;
 import lombok.experimental.UtilityClass;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +11,7 @@ import java.sql.SQLException;
 
 @UtilityClass
 public class DbConnectionUtils {
+    private static final Logger logger = LoggerFactory.getLogger(CityRepository.class);
 
     public static Connection getConnection() {
         String url = ReadPropertiesUtils.readProperty("db.url");
@@ -19,7 +23,7 @@ public class DbConnectionUtils {
             connection.setAutoCommit(false);
             return connection;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.info(e.getMessage());
             throw new RuntimeException(e);
         }
     }
