@@ -11,8 +11,14 @@ import java.util.Map;
 public class AccuweatherCache {
     private final Map<TopCityCount, LocationsRoot[]> cache = new HashMap<>();
 
-    public LocationsRoot[] save(final TopCityCount topCityCount, final LocationsRoot[] locationsRoots) {
-        return cache.put(topCityCount, locationsRoots);
+    //почему возвращаем .put ?
+    //сделать void
+//    public LocationsRoot[] save(final TopCityCount topCityCount, final LocationsRoot[] locationsRoots) {
+//        return cache.put(topCityCount, locationsRoots);
+//    }
+
+    public void save(final TopCityCount topCityCount, final LocationsRoot[] locationsRoots) {
+        cache.put(topCityCount, locationsRoots);
     }
 
     public LocationsRoot[] get(final TopCityCount topCityCount) {

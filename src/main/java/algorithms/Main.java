@@ -212,4 +212,29 @@ public class Main {
         }
         return set.size() == 26;
     }
+
+    //"hello"
+    public char getDuplicateChar(String string) {
+        char[] array = string.toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    return array[j];
+                }
+            }
+        }
+        return '0';
+    }
+
+    public char getDuplicateCharSet(String string) {
+        char[] array = string.toCharArray();
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < array.length; i++) {
+            if (set.contains(array[i])) {
+                return array[i];
+            }
+            set.add(array[i]);
+        }
+        return '0';
+    }
 }

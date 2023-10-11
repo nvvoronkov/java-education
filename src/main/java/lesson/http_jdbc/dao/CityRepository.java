@@ -6,8 +6,6 @@ import lesson.nio.repository.CrudRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,10 +18,14 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
 
     @Override
     public Optional<CityEntity> findById(final Long id) {
-        var sql = "SELECT * FROM city WHERE id = ?";
+        var sql = """
+                SELECT *
+                FROM city
+                WHERE id = ?;
+                """;
 
-        try (Connection connection = DbConnectionUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (var connection = DbConnectionUtils.getConnection();
+             var preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -48,6 +50,13 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             connection.commit();
             return Optional.of(cityEntity);
         } catch (SQLException e) {
+//            try {
+//                connection.rollback();
+//            } catch (SQLException ex) {
+//                logger.info(ex.getMessage());
+//                throw new RuntimeException(ex);
+//            }
+            // как вызвать rollback в блоке catch
             logger.info(e.getMessage());
             throw new RuntimeException(e);
         }
@@ -57,8 +66,8 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
     public void delete(final Long id) {
         var sql = "DELETE FROM city WHERE id = ?";
 
-        try (Connection connection = DbConnectionUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (var connection = DbConnectionUtils.getConnection();
+             var preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
 
@@ -71,14 +80,18 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
 
     @Override
     public List<CityEntity> findAll() {
-        var sql = "SELECT * FROM city";
+        var sql = """
+                SELECT *
+                FROM city
+                """;
         List<CityEntity> cities = new ArrayList<>();
 
-        try (Connection connection = DbConnectionUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (var connection = DbConnectionUtils.getConnection();
+             var preparedStatement = connection.prepareStatement(sql)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                cities.add(new CityEntity(resultSet.getLong("id"), resultSet.getString("name")));
+                cities.add(new CityEntity(resultSet.getLong("id"),
+                        resultSet.getString("name")));
             }
         } catch (SQLException e) {
             logger.info(e.getMessage());

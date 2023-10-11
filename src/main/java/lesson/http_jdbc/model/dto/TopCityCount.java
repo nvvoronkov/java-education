@@ -3,6 +3,7 @@ package lesson.http_jdbc.model.dto;
 import lombok.Getter;
 
 import java.util.Arrays;
+//почему это DTO?
 
 @Getter
 public enum TopCityCount {

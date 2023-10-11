@@ -14,12 +14,13 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 public class AccuweatherClient {
     private static final String URL = "http://dataservice.accuweather.com";
 
-    private final String apiKey = ReadPropertiesUtils.readProperty("API_KEY_NIKITA");
+    private final String apiKey = ReadPropertiesUtils.readProperty("apikey");
 
     private final OkHttpClient okHttpClient;
     private final ObjectMapper objectMapper;
@@ -30,7 +31,7 @@ public class AccuweatherClient {
             return accuweatherCache.get(topCityCount);
         }
 
-        var url = HttpUrl.parse(URL)
+        var url = Objects.requireNonNull(HttpUrl.parse(URL))
                 .newBuilder()
                 .addPathSegment("locations")
                 .addPathSegment("v1")
@@ -42,12 +43,14 @@ public class AccuweatherClient {
 
         TypeReference<LocationsRoot[]> typeReference = new TypeReference<>() {
         };
-        return accuweatherCache.save(topCityCount, call(url, typeReference));
+        LocationsRoot[] locationsRoots = call(url, typeReference);
+        accuweatherCache.save(topCityCount, locationsRoots);
+        return locationsRoots;
     }
 
     //TODO: Реализовать сохранение истории получениы current conditiion
     public CurrentConditionResponse[] getCurrentCondition(final String key) {
-        var url = HttpUrl.parse(URL)
+        var url = Objects.requireNonNull(HttpUrl.parse(URL))
                 .newBuilder()
                 .addPathSegment("currentconditions")
                 .addPathSegment("v1")
@@ -68,6 +71,7 @@ public class AccuweatherClient {
         System.out.println("Sending rq... " + request);
         try (Response response = okHttpClient.newCall(request).execute()) {
             System.out.println("Received rs... " + response);
+            assert response.body() != null;
             String json = response.body().string();
             return objectMapper.readValue(json, typeReference);
         } catch (IOException e) {

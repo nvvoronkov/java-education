@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797bcad1-a17a-4ebf-8395-431bacf8c42e" name="Changes" comment="seven lesson">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/hibernate/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/hibernate/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/cache/AccuweatherCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/cache/AccuweatherCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/client/AccuweatherClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/client/AccuweatherClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/dao/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/dao/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/service/AccuweatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lesson/http_jdbc/service/AccuweatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
