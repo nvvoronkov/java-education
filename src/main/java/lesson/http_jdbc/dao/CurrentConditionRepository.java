@@ -37,12 +37,12 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
 
     @Override
     public Optional<CurrentConditionEntity> save(final CurrentConditionEntity currentConditionEntity) {
-        var sql = "INSERT INTO current_condition_history (temp, city_id, created_on) VALUES (?, ?, ?) RETURNING id";
+        var sql = "INSERT INTO current_condition_history (temp, city_key, created_on) VALUES (?, ?, ?) RETURNING id";
 
         try (Connection connection = DbConnectionUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setDouble(1, currentConditionEntity.getTemp());
-            preparedStatement.setLong(2, currentConditionEntity.getCityId());
+            preparedStatement.setLong(2, currentConditionEntity.getCityKey());
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 Long id = resultSet.getLong(1);

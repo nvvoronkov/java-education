@@ -4,10 +4,10 @@ import lesson.http_jdbc.model.dto.CurrentConditionResponse;
 import lesson.http_jdbc.model.entity.CurrentConditionEntity;
 
 public class CurrentConditionResponseMapper {
-    public CurrentConditionEntity toEntity(final CurrentConditionResponse condition, final Long cityId) {
+    public CurrentConditionEntity toEntity(final CurrentConditionResponse condition, final Long cityKey) {
         return CurrentConditionEntity.builder()
                 .temp(condition.getTemperature().getMetric().getValue())
-                .cityId(cityId)
+                .cityKey(cityKey)
                 .build();
     }
 }

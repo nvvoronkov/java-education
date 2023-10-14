@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class CurrentConditionEntity {
     private Long id;
     private Double temp;
-    private Long cityId;
+    private Long cityKey;
 }

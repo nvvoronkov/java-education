@@ -17,10 +17,10 @@ import java.util.*;
 @RequiredArgsConstructor
 public class AccuweatherService {
     private final AccuweatherClient accuweatherClient;
-    private CityRepository cityRepository;
-    private CurrentConditionRepository currentConditionRepository;
-    private CityMapper cityMapper;
-    private CurrentConditionResponseMapper conditionMapper;
+    private final CityRepository cityRepository;
+    private final CurrentConditionRepository currentConditionRepository;
+    private final CityMapper cityMapper;
+    private final CurrentConditionResponseMapper conditionMapper;
     private CityEntity cityEntity;
 
 
@@ -48,11 +48,12 @@ public class AccuweatherService {
 
             for (LocationsRoot locationRoot : listCities) {
                 CityEntity entity = cityMapper.toEntity(locationRoot);
+                System.out.println(entity);
                 if (!(cityRepository.isCityInStorage(entity))) {
                     cityEntitySet.add(entity);
                 }
             }
-            cityEntitySet.forEach(cityEntity -> cityRepository.save(cityEntity));
+            cityEntitySet.forEach(cityRepository::save);
 
             System.out.println("Choose city");
             Arrays.stream(locationsRoots).forEach(System.out::println);
@@ -67,7 +68,7 @@ public class AccuweatherService {
                 currentConditionEntities.add(conditionMapper.toEntity(condition, Long.valueOf(cityKey)));
             }
             currentConditionEntities
-                    .forEach(currentConditionEntity -> currentConditionRepository.save(currentConditionEntity));
+                    .forEach(currentConditionRepository::save);
 
             System.out.println(Arrays.toString(currentCondition));
             System.out.println("Do you want to repeat the request? (1 - yes, any other key - no)");

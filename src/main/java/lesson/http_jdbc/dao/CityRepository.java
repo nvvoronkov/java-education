@@ -30,7 +30,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return Optional.of(new CityEntity(resultSet.getLong("id"),
-                        resultSet.getString("name")));
+                        resultSet.getInt("key"), resultSet.getString("name")));
             }
         } catch (SQLException e) {
             logger.info(e.getMessage());
@@ -91,7 +91,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 cities.add(new CityEntity(resultSet.getLong("id"),
-                        resultSet.getString("name")));
+                        resultSet.getInt("key"), resultSet.getString("name")));
             }
         } catch (SQLException e) {
             logger.info(e.getMessage());
