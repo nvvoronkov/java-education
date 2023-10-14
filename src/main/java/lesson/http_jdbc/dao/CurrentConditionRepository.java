@@ -43,12 +43,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setDouble(1, currentConditionEntity.getTemp());
             preparedStatement.setLong(2, currentConditionEntity.getCityId());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Long id = resultSet.getLong(1);
-                currentConditionEntity.setId(id);
-                return Optional.of(currentConditionEntity);
-            }
+            preparedStatement.executeQuery();
 
             connection.commit();
         } catch (SQLException e) {

@@ -24,8 +24,6 @@ public class AccuweatherService {
     private final CurrentConditionRepository currentConditionRepository;
     private final CityMapper cityMapper;
     private final CurrentConditionResponseMapper conditionMapper;
-    private CityEntity cityEntity;
-
 
     private static String getCityKey(final LocationsRoot[] cityLocations, final String englishName) {
         return Arrays.stream(cityLocations)
@@ -38,7 +36,7 @@ public class AccuweatherService {
     //TODO:
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        int choice = 0;
+        int choice;
         do {
             System.out.println("How many cities do you want to see?");
             Arrays.stream(TopCityCount.values())
@@ -58,28 +56,27 @@ public class AccuweatherService {
                 cityEntitySet.forEach(cityRepository::save);
             } catch (RuntimeException e) {
                 logger.info(e.getMessage());
-                continue;
+                //continue;
+            } finally {
+                System.out.println("Choose city");
+                Arrays.stream(locationsRoots).forEach(System.out::println);
+                String englishName = scanner.next();
+
+                String cityKey = getCityKey(locationsRoots, englishName);
+
+                var currentCondition = accuweatherClient.getCurrentCondition(cityKey);
+                List<CurrentConditionResponse> conditionResponseList = Arrays.stream(currentCondition).toList();
+                List<CurrentConditionEntity> currentConditionEntities = new ArrayList<>();
+                for (CurrentConditionResponse condition : conditionResponseList) {
+                    currentConditionEntities.add(conditionMapper.toEntity(condition, Long.valueOf(cityKey)));
+                }
+                currentConditionEntities.forEach(currentConditionRepository::save);
+
+                System.out.println(Arrays.toString(currentCondition));
+                System.out.println("Do you want to repeat the request? (1 - yes, any other key - no)");
+                System.out.println(currentConditionRepository.findAll());
+                choice = scanner.nextInt();
             }
-
-            System.out.println("Choose city");
-            Arrays.stream(locationsRoots).forEach(System.out::println);
-            String englishName = scanner.next();
-
-            String cityKey = getCityKey(locationsRoots, englishName);
-
-            var currentCondition = accuweatherClient.getCurrentCondition(cityKey);
-            List<CurrentConditionResponse> conditionResponseList = Arrays.stream(currentCondition).toList();
-            List<CurrentConditionEntity> currentConditionEntities = new ArrayList<>();
-            for (CurrentConditionResponse condition : conditionResponseList) {
-                currentConditionEntities.add(conditionMapper.toEntity(condition, Long.valueOf(cityKey)));
-            }
-            currentConditionEntities
-                    .forEach(currentConditionRepository::save);
-
-            System.out.println(Arrays.toString(currentCondition));
-            System.out.println("Do you want to repeat the request? (1 - yes, any other key - no)");
-            choice = scanner.nextInt();
         } while (choice == 1);
     }
-
 }
