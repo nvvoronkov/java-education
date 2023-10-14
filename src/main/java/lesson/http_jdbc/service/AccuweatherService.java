@@ -20,7 +20,9 @@ public class AccuweatherService {
     private CityRepository cityRepository;
     private CurrentConditionRepository currentConditionRepository;
     private CityMapper cityMapper;
-    CurrentConditionResponseMapper conditionMapper;
+    private CurrentConditionResponseMapper conditionMapper;
+    private CityEntity cityEntity;
+
 
     private static String getCityKey(final LocationsRoot[] cityLocations, final String englishName) {
         return Arrays.stream(cityLocations)
@@ -41,12 +43,14 @@ public class AccuweatherService {
             int chosenValue = scanner.nextInt();
             var locationsRoots = accuweatherClient.getTopCities(TopCityCount.getTopCityCountByValue(chosenValue));
 
-            List<LocationsRoot> listCities = Arrays.stream(locationsRoots)
-                    .toList();
+            List<LocationsRoot> listCities = Arrays.stream(locationsRoots).toList();
             Set<CityEntity> cityEntitySet = new HashSet<>();
 
-            for (LocationsRoot name : listCities) {
-                cityEntitySet.add(cityMapper.toEntity(name));
+            for (LocationsRoot locationRoot : listCities) {
+                CityEntity entity = cityMapper.toEntity(locationRoot);
+                if (!(cityRepository.isCityInStorage(entity))) {
+                    cityEntitySet.add(entity);
+                }
             }
             cityEntitySet.forEach(cityEntity -> cityRepository.save(cityEntity));
 

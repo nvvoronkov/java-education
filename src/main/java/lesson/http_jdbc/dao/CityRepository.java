@@ -99,4 +99,8 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
         }
         return cities;
     }
+
+    public boolean isCityInStorage(final CityEntity cityEntity) {
+        return findById(cityEntity.getId()).equals(cityEntity);
+    }
 }
