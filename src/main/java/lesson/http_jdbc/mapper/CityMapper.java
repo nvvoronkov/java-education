@@ -7,7 +7,7 @@ import lesson.http_jdbc.model.entity.CityEntity;
 public class CityMapper {
     public CityEntity toEntity(final LocationsRoot locationsRoot) {
         return CityEntity.builder()
-                .key(Integer.valueOf(locationsRoot.getKey()))
+                .id(Long.valueOf(locationsRoot.getKey()))
                 .name(locationsRoot.getEnglishName())
                 .build();
     }

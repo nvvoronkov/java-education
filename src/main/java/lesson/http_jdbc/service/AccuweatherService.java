@@ -11,11 +11,14 @@ import lesson.http_jdbc.model.dto.TopCityCount;
 import lesson.http_jdbc.model.entity.CityEntity;
 import lesson.http_jdbc.model.entity.CurrentConditionEntity;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 @RequiredArgsConstructor
 public class AccuweatherService {
+    private static final Logger logger = LoggerFactory.getLogger(CityRepository.class);
     private final AccuweatherClient accuweatherClient;
     private final CityRepository cityRepository;
     private final CurrentConditionRepository currentConditionRepository;
@@ -35,7 +38,7 @@ public class AccuweatherService {
     //TODO:
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice = 0;
         do {
             System.out.println("How many cities do you want to see?");
             Arrays.stream(TopCityCount.values())
@@ -45,15 +48,18 @@ public class AccuweatherService {
 
             List<LocationsRoot> listCities = Arrays.stream(locationsRoots).toList();
             Set<CityEntity> cityEntitySet = new HashSet<>();
-
-            for (LocationsRoot locationRoot : listCities) {
-                CityEntity entity = cityMapper.toEntity(locationRoot);
-                System.out.println(entity);
-                if (!(cityRepository.isCityInStorage(entity))) {
-                    cityEntitySet.add(entity);
+            try {
+                for (LocationsRoot locationRoot : listCities) {
+                    CityEntity entity = cityMapper.toEntity(locationRoot);
+                    if (!(cityRepository.isCityInStorage(entity))) {
+                        cityEntitySet.add(entity);
+                    }
                 }
+                cityEntitySet.forEach(cityRepository::save);
+            } catch (RuntimeException e) {
+                logger.info(e.getMessage());
+                continue;
             }
-            cityEntitySet.forEach(cityRepository::save);
 
             System.out.println("Choose city");
             Arrays.stream(locationsRoots).forEach(System.out::println);

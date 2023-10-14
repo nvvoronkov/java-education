@@ -29,8 +29,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(new CityEntity(resultSet.getLong("id"),
-                        resultSet.getInt("key"), resultSet.getString("name")));
+                return Optional.of(new CityEntity(resultSet.getLong("id"), resultSet.getString("name")));
             }
         } catch (SQLException e) {
             logger.info(e.getMessage());
@@ -41,24 +40,30 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
 
     @Override
     public Optional<CityEntity> save(final CityEntity cityEntity) {
-        var sql = "insert into city (name) values (?);";
-        try (var connection = DbConnectionUtils.getConnection();
-             var preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, cityEntity.getName());
-            preparedStatement.executeUpdate();
+        if (isCityInStorage(cityEntity)) {
+            logger.info("%s already in database", cityEntity.getName());
+            throw new RuntimeException();
+        } else {
+            var sql = "insert into city (id, name) values (?, ?);";
+            try (var connection = DbConnectionUtils.getConnection();
+                 var preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setInt(1, Math.toIntExact(cityEntity.getId()));
+                preparedStatement.setString(2, cityEntity.getName());
+                preparedStatement.executeUpdate();
 
-            connection.commit();
-            return Optional.of(cityEntity);
-        } catch (SQLException e) {
+                connection.commit();
+                return Optional.of(cityEntity);
+            } catch (SQLException e) {
 //            try {
 //                connection.rollback();
 //            } catch (SQLException ex) {
 //                logger.info(ex.getMessage());
 //                throw new RuntimeException(ex);
 //            }
-            // как вызвать rollback в блоке catch
-            logger.info(e.getMessage());
-            throw new RuntimeException(e);
+                // как вызвать rollback в блоке catch
+                logger.info(e.getMessage());
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -90,8 +95,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
              var preparedStatement = connection.prepareStatement(sql)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                cities.add(new CityEntity(resultSet.getLong("id"),
-                        resultSet.getInt("key"), resultSet.getString("name")));
+                cities.add(new CityEntity(resultSet.getLong("id"), resultSet.getString("name")));
             }
         } catch (SQLException e) {
             logger.info(e.getMessage());

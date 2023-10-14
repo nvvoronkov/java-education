@@ -43,8 +43,7 @@ public class App {
         try (Connection connection = DbConnectionUtils.getConnection()) {
             String createCity = """
                     CREATE TABLE IF NOT EXISTS city (
-                        id serial PRIMARY KEY,
-                        key INTEGER NOT NULL UNIQUE,
+                        id INTEGER PRIMARY KEY,
                         name varchar(100) NOT NULL,
                         created_on TIMESTAMP NOT NULL DEFAULT now())
                     """;
@@ -52,7 +51,7 @@ public class App {
                     CREATE TABLE IF NOT EXISTS current_condition_history (
                         id serial PRIMARY KEY,
                         temp FLOAT NOT NULL,
-                        city_key bigint NOT NULL REFERENCES city (key),
+                        city_id bigint NOT NULL REFERENCES city (id),
                         created_on TIMESTAMP NOT NULL DEFAULT now())
                     """;
             var statement = connection.createStatement();

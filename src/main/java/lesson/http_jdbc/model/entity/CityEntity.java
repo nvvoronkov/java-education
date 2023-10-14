@@ -11,6 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CityEntity {
     private Long id;
-    private Integer key;
     private String name;
 }
