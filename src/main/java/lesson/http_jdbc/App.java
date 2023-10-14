@@ -41,7 +41,7 @@ public class App {
             String createHistory = """
                     CREATE TABLE IF NOT EXISTS current_condition_history (
                         id serial PRIMARY KEY,
-                        temp decimal NOT NULL,
+                        temp double NOT NULL,
                         city_id bigint NOT NULL REFERENCES city (id),
                         created_on TIMESTAMP NOT NULL DEFAULT now())
                     """;

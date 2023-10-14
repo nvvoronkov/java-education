@@ -25,7 +25,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return Optional.of(new CurrentConditionEntity(resultSet.getLong("id"),
-                        resultSet.getBigDecimal("temp"),
+                        resultSet.getDouble("temp"),
                         resultSet.getLong("city_id")));
             }
         } catch (SQLException e) {
@@ -41,7 +41,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
 
         try (Connection connection = DbConnectionUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setBigDecimal(1, currentConditionEntity.getTemp());
+            preparedStatement.setDouble(1, currentConditionEntity.getTemp());
             preparedStatement.setLong(2, currentConditionEntity.getCityId());
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -84,7 +84,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 currentConditions.add(new CurrentConditionEntity(resultSet.getLong("id"),
-                        resultSet.getBigDecimal("temp"),
+                        resultSet.getDouble("temp"),
                         resultSet.getLong("city_id")));
             }
 
