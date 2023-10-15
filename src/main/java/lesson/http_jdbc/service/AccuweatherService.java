@@ -19,6 +19,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class AccuweatherService {
     private static final Logger logger = LoggerFactory.getLogger(CityRepository.class);
+    //почему required а не all
     private final AccuweatherClient accuweatherClient;
     private final CityRepository cityRepository;
     private final CurrentConditionRepository currentConditionRepository;
