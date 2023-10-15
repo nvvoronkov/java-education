@@ -5,19 +5,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lesson.http_jdbc.cache.AccuweatherCache;
 import lesson.http_jdbc.model.dto.CurrentConditionResponse;
 import lesson.http_jdbc.model.dto.LocationsRoot;
-import lesson.http_jdbc.model.dto.TopCityCount;
+import lesson.http_jdbc.model.enums.TopCityCount;
 import lesson.http_jdbc.util.ReadPropertiesUtils;
 import lombok.RequiredArgsConstructor;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Objects;
 
 @RequiredArgsConstructor
 public class AccuweatherClient {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccuweatherClient.class);
     private static final String URL = "http://dataservice.accuweather.com";
 
     private final String apiKey = ReadPropertiesUtils.readProperty("apikey");
@@ -27,8 +30,9 @@ public class AccuweatherClient {
     private final AccuweatherCache accuweatherCache;
 
     public LocationsRoot[] getTopCities(final TopCityCount topCityCount) {
-        if (accuweatherCache.getCache().containsKey(topCityCount)) {
-            return accuweatherCache.get(topCityCount);
+        LocationsRoot[] locationsRoots = accuweatherCache.get(topCityCount);
+        if (locationsRoots != null) {
+            return locationsRoots;
         }
 
         var url = Objects.requireNonNull(HttpUrl.parse(URL))
@@ -43,12 +47,11 @@ public class AccuweatherClient {
 
         TypeReference<LocationsRoot[]> typeReference = new TypeReference<>() {
         };
-        LocationsRoot[] locationsRoots = call(url, typeReference);
-        accuweatherCache.save(topCityCount, locationsRoots);
-        return locationsRoots;
+        LocationsRoot[] result = call(url, typeReference);
+        accuweatherCache.save(topCityCount, result);
+        return result;
     }
 
-    //TODO: Реализовать сохранение истории получениы current conditiion
     public CurrentConditionResponse[] getCurrentCondition(final String key) {
         var url = Objects.requireNonNull(HttpUrl.parse(URL))
                 .newBuilder()
@@ -68,9 +71,9 @@ public class AccuweatherClient {
                 .url(url)
                 .build();
 
-        System.out.println("Sending rq... " + request);
+        LOGGER.info("Sending rq... {}", request);
         try (Response response = okHttpClient.newCall(request).execute()) {
-            System.out.println("Received rs... " + response);
+            LOGGER.info("Received rs... {}", response);
             assert response.body() != null;
             String json = response.body().string();
             return objectMapper.readValue(json, typeReference);

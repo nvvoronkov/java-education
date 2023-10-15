@@ -1,21 +1,14 @@
 package lesson.http_jdbc.cache;
 
 import lesson.http_jdbc.model.dto.LocationsRoot;
-import lesson.http_jdbc.model.dto.TopCityCount;
+import lesson.http_jdbc.model.enums.TopCityCount;
 import lombok.Data;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.EnumMap;
 
 @Data
 public class AccuweatherCache {
-    private final Map<TopCityCount, LocationsRoot[]> cache = new HashMap<>();
-
-    //почему возвращаем .put ?
-    //сделать void
-//    public LocationsRoot[] save(final TopCityCount topCityCount, final LocationsRoot[] locationsRoots) {
-//        return cache.put(topCityCount, locationsRoots);
-//    }
+    private final EnumMap<TopCityCount, LocationsRoot[]> cache = new EnumMap<>(TopCityCount.class);
 
     public void save(final TopCityCount topCityCount, final LocationsRoot[] locationsRoots) {
         cache.put(topCityCount, locationsRoots);

@@ -214,7 +214,7 @@ public class Main {
     }
 
     //"hello"
-    public char getDuplicateChar(String string) {
+    public char getDuplicateChar(final String string) {
         char[] array = string.toCharArray();
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -226,7 +226,7 @@ public class Main {
         return '0';
     }
 
-    public char getDuplicateCharSet(String string) {
+    public char getDuplicateCharSet(final String string) {
         char[] array = string.toCharArray();
         Set<Character> set = new HashSet<>();
         for (int i = 0; i < array.length; i++) {
