@@ -2,12 +2,12 @@ package lesson.http_jdbc.mapper;
 
 import lesson.http_jdbc.model.dto.LocationsRoot;
 import lesson.http_jdbc.model.entity.CityEntity;
+import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 //TODO https://mapstruct.org/
@@ -15,11 +15,13 @@ import java.sql.SQLException;
 public interface CityMapper {
     CityMapper instance = Mappers.getMapper(CityMapper.class);
 
-    @Mapping(source = "key", target = "id")
-    @Mapping(source = "englishName", target = "name")
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "key")
+    @Mapping(target = "name", source = "englishName")
     CityEntity toEntity(LocationsRoot locationsRoot);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "name", target = "name")
-    CityEntity toEntity(ResultSet resultSet) throws SQLException;
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "name", source = "name")
+    CityEntity toEntity(ResultSet resultSet);
 }

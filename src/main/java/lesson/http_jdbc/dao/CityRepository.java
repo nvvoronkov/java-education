@@ -60,9 +60,8 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
     @Override
     public void delete(final Long id) {
         var sql = "DELETE FROM city WHERE id = ?";
-
-        try (var connection = DbConnectionUtils.getConnection();
-             var preparedStatement = connection.prepareStatement(sql)) {
+        var connection = DbConnectionUtils.getConnection();
+        try (var preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
 
@@ -78,8 +77,8 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
         var sql = "SELECT * FROM city";
         List<CityEntity> cities = new ArrayList<>();
 
-        try (var connection = DbConnectionUtils.getConnection();
-             var preparedStatement = connection.prepareStatement(sql)) {
+        var connection = DbConnectionUtils.getConnection();
+        try (var preparedStatement = connection.prepareStatement(sql)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 cities.add(cityMapper.toEntity(resultSet));

@@ -24,18 +24,18 @@ public class App {
         OkHttpClient okHttpClient = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
         AccuweatherCache accuweatherCache = new AccuweatherCache();
-        CityMapper cityMapper = new CityMapper();
-        CurrentConditionResponseMapper conditionResponseMapper = new CurrentConditionResponseMapper();
-        CityRepository cityRepository = new CityRepository(new CityMapper());
-        CurrentConditionRepository currentConditionRepository = new CurrentConditionRepository();
-
-        AccuweatherClient accuweatherClient = new AccuweatherClient(okHttpClient, objectMapper, accuweatherCache);
-        AccuweatherService accuweatherService = new AccuweatherService(accuweatherClient, cityRepository,
-                currentConditionRepository, cityMapper, conditionResponseMapper);
-
-        dbInit();
-
-        accuweatherService.run();
+//        CityMapper cityMapper = new CityMapper();
+//        CurrentConditionResponseMapper conditionResponseMapper = new CurrentConditionResponseMapper();
+//        CityRepository cityRepository = new CityRepository(new CityMapper());
+//        CurrentConditionRepository currentConditionRepository = new CurrentConditionRepository();
+//
+//        AccuweatherClient accuweatherClient = new AccuweatherClient(okHttpClient, objectMapper, accuweatherCache);
+//        AccuweatherService accuweatherService = new AccuweatherService(accuweatherClient, cityRepository,
+//                currentConditionRepository, cityMapper, conditionResponseMapper);
+//
+//        dbInit();
+//
+//        accuweatherService.run();
     }
 
     private static void dbInit() {

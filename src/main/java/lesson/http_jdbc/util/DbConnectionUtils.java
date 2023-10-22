@@ -28,7 +28,6 @@ public class DbConnectionUtils {
         }
     }
 
-
     public static Connection getConnection() {
         return CONNECTION;
     }

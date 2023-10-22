@@ -26,35 +26,28 @@ public class AccuweatherService {
     private final CurrentConditionResponseMapper conditionMapper;
 
     public void run() {
-        int times = 0;
-        do {
-            TopCityCount chosenValue = Arrays.stream(TopCityCount.values())
-                    .findAny()
-                    .orElseThrow();
+        TopCityCount chosenValue = Arrays.stream(TopCityCount.values())
+            .findAny()
+            .orElseThrow();
 
-            LocationsRoot[] topCities = accuweatherClient.getTopCities(chosenValue);
-            
-            List<CityEntity> cityEntities = Arrays.stream(topCities)
-                    .map(cityMapper::toEntity)
-                    .filter(cityEntity -> cityRepository.findById(cityEntity.getId()).isEmpty())
-                    .toList();
-            cityEntities.forEach(cityRepository::save);
+        LocationsRoot[] topCities = accuweatherClient.getTopCities(chosenValue);
 
-            String cityKey = Arrays.stream(topCities)
-                    .map(LocationsRoot::getKey)
-                    .findAny()
-                    .orElseThrow();
+        List<CityEntity> cityEntities = Arrays.stream(topCities)
+            .map(cityMapper::toEntity)
+            .filter(cityEntity -> cityRepository.findById(cityEntity.getId()).isEmpty())
+            .toList();
+        cityEntities.forEach(cityRepository::save);
 
-            var currentCondition = Arrays.stream(accuweatherClient.getCurrentCondition(cityKey))
-                    .map(response -> conditionMapper.toEntity(response, Long.valueOf(cityKey)))
-                    .toList();
-            currentCondition.forEach(currentConditionRepository::save);
+        String cityKey = Arrays.stream(topCities)
+            .map(LocationsRoot::getKey)
+            .findAny()
+            .orElseThrow();
 
-            LOGGER.info("{}", currentCondition);
-            LOGGER.info("Times: {}", times);
+        var currentCondition = Arrays.stream(accuweatherClient.getCurrentCondition(cityKey))
+            .map(response -> conditionMapper.toEntity(response, Long.valueOf(cityKey)))
+            .toList();
+        currentCondition.forEach(currentConditionRepository::save);
 
-            times++;
-        } while (times < 1);
         LOGGER.info("OVER!");
     }
 }
