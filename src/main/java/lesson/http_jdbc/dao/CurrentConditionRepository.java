@@ -6,11 +6,7 @@ import lesson.nio.repository.CrudRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -43,19 +39,25 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
     // todo: save should save or update if entity exist
     @Override
     public Optional<CurrentConditionEntity> save(final CurrentConditionEntity currentConditionEntity) {
-        var sql = "INSERT INTO current_condition_history (temp, city_id) VALUES (?, ?)";
+        var sql = """
+                INSERT INTO current_condition_history (id, temp, city_id) 
+                VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE temp = VALUES(temp), city_id = VALUES(city_id)
+                """;
         Connection connection = DbConnectionUtils.getConnection();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setDouble(1, currentConditionEntity.getTemp());
-            preparedStatement.setLong(2, currentConditionEntity.getCityId());
+            preparedStatement.setLong(1, currentConditionEntity.getId());
+            preparedStatement.setDouble(2, currentConditionEntity.getTemp());
+            preparedStatement.setLong(3, currentConditionEntity.getCityId());
             preparedStatement.executeUpdate();
 
-            currentConditionEntity.setId(getGeneratedKeys(preparedStatement));
+            if (currentConditionEntity.getId() == 0) {
+                currentConditionEntity.setId(getGeneratedKeys(preparedStatement));
+            }
 
             connection.commit();
         } catch (SQLException e) {
-            LOGGER.info(e.getMessage());
+            LOGGER.error(e.getMessage());
             throw new RuntimeException(e);
         }
         return Optional.empty();

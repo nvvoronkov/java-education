@@ -2,25 +2,24 @@ package lesson.http_jdbc.mapper;
 
 import lesson.http_jdbc.model.dto.LocationsRoot;
 import lesson.http_jdbc.model.entity.CityEntity;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
 //TODO https://mapstruct.org/
-public class CityMapper {
-    public CityEntity toEntity(final LocationsRoot locationsRoot) {
-        return CityEntity.builder()
-                .id(Long.valueOf(locationsRoot.getKey()))
-                .name(locationsRoot.getEnglishName())
-                .build();
-    }
+@Mapper
+public interface CityMapper {
+    CityMapper instance = Mappers.getMapper(CityMapper.class);
 
-    public CityEntity toEntity(final ResultSet resultSet) throws SQLException {
-        return CityEntity.builder()
-                .id(resultSet.getLong("id"))
-                .name(resultSet.getString("name"))
-                .build();
-    }
+    @Mapping(source = "key", target = "id")
+    @Mapping(source = "englishName", target = "name")
+    CityEntity toEntity(LocationsRoot locationsRoot);
 
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "name", target = "name")
+    CityEntity toEntity(ResultSet resultSet) throws SQLException;
 }

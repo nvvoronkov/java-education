@@ -26,6 +26,7 @@
         <jackson-databind.version>2.15.0</jackson-databind.version>
         <postgresql.version>42.5.4</postgresql.version>
         <hibernate-core.version>6.3.0.Final</hibernate-core.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +45,11 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
 
             <!--db-->

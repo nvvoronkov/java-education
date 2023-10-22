@@ -2,9 +2,7 @@ package algorithms;
 
 import lombok.experimental.UtilityClass;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @UtilityClass
 public class Main {
@@ -18,10 +16,8 @@ public class Main {
 //        String arr = "hello";
 //        System.out.println(reverseStringArray(arr));
 //
-        String s = "HELLO";
-        System.out.println(firstDuplicateChar(s));
-        String sentence = "thequickbrownfoxjumpsoverthelazydog";
-        System.out.println(isPangram(sentence));
+//
+        System.out.println(stringAnalitics("abcde", "aec"));
     }
 
     /**
@@ -236,5 +232,64 @@ public class Main {
             set.add(array[i]);
         }
         return '0';
+    }
+
+    /**
+     * Даны две строки s и t. Вернуть true, если s является подпоследовательностью t, и false в противном случае.
+     * <p>
+     * Подпоследовательность строки - это последовательность символов, которую можно получить путем удаления некоторых
+     * (или ни одного) символов из исходной строки, сохраняя при этом относительный порядок оставшихся символов.
+     * Например, "ace" является подпоследовательностью "abcde", а "aec" - нет.
+     */
+    //{a, b, c, d, e}
+    //{a, c, e}
+    //нам нужно чтобы каждая итерация проверяла символ на следующий
+    //если a = a то идем дальше б = e? нет значит с = е?
+    // нет, идем дальше d = e нет, e равно e ? да, но в инпут строке еще есть символы
+    public boolean stringAnalitics(final String s, final String t) {
+        char[] string = s.toCharArray();
+        char[] input = t.toCharArray();
+        int count = 0;
+        do {
+            for (int i = 0; i < s.length(); i++) {
+                if (string[i] == input[count]) {
+                    count++;
+                }
+                if (count == t.length()) {
+                    return true;
+                }
+            }
+        } while (count < t.length() - 1);
+        return false;
+    }
+
+    /**
+     * Для двух заданных отсортированных в возрастающем порядке целочисленных массивов A и B
+     * длин n и m соответственно, найти пару самых близких между собой по значению элементов.
+     * Более формально: найти такие элементы A[i] и B[j], что их модуль разности минимален
+     * по сравнению с другими парами элементов из этих массивов.
+     * <p>
+     * Пример. Для заданных массивов {1, 2, 10} и {8, 20, 30} ответом будет пара чисел 10 и 8.
+     */
+    public void twoArrays() {
+
+    }
+
+    /**
+     * Пример 1: Дан массив положительных целых чисел nums и целое число k.
+     * Найти длину самой длинной подмассива, сумма элементов которого меньше или равна k.
+     * Это задача, о которой мы говорили выше. Мы теперь формально решим ее.
+     * <p>
+     * Давайте используем целое число curr, которое отслеживает сумму текущего окна.
+     * Поскольку задача требует подмассивы, сумма элементов которых меньше или равна k,
+     * мы хотим поддерживать curr <= k. Рассмотрим пример, где nums = [3, 1, 2, 7, 4, 2, 1, 1, 5], а k = 8.
+     */
+    //бежим по массиву и считаем сумму последующих элементов, если она больше к то останавливаемся и
+    //считаем длину с предыдущим элементом, прихравниваем и бежим со следующего i
+    //если следующая сумма больше то перезаписываем в лист
+    public List<Integer> arraysAndChar(final int[] array, final int k) {
+        List<Integer> resultList = new ArrayList<>();
+
+        return resultList;
     }
 }
