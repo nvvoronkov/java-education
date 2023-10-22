@@ -12,7 +12,6 @@ public class Cat extends Animal {
     private static int countCat;
 
     public Cat(final String name, final int appetite) {
-        super();
         this.name = name;
         this.appetite = appetite;
     }

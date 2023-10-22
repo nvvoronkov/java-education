@@ -20,6 +20,7 @@ class CatTest {
         String actualOutput = outputStream.toString().trim();
         org.assertj.core.api.Assertions.assertThat(expectedOutput).isEqualTo(actualOutput);
     }
+
     @Test
     void eatWithEnoughFoodShouldSetSatietyToTrue() {
         int food = 10;
@@ -29,6 +30,7 @@ class CatTest {
         assertTrue(cat.isSatiety());
         Assertions.assertThat(cat.isSatiety()).isFalse();
     }
+
     @Test
     void eatWithNotEnoughFoodShouldSetSatietyToFalse() {
         int food = 5;
@@ -37,6 +39,7 @@ class CatTest {
         cat.eat(plate);
         Assertions.assertThat(cat.isSatiety()).isFalse();
     }
+
     @Test
     void catInfoShouldPrintCatInfo() {
         Cat cat = new Cat("Tom", 5);
