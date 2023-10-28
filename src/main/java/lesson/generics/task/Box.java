@@ -17,10 +17,10 @@ public class Box<T extends Fruit> {
     }
 
     public void addFruit(final T fruit) {
-        if (fruits.size() < 3) {
+        /*if (fruits.size() < 3) {
             fruits.add(fruit);
         }
-        System.out.println("Not space!");
+        System.out.println("Not space!");*/
     }
 
     public boolean compare(final Box<?> box) {

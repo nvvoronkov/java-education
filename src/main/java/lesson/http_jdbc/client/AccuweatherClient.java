@@ -3,6 +3,7 @@ package lesson.http_jdbc.client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lesson.http_jdbc.cache.AccuweatherCache;
+import lesson.http_jdbc.exeption.MyRuntimeException;
 import lesson.http_jdbc.model.dto.CurrentConditionResponse;
 import lesson.http_jdbc.model.dto.LocationsRoot;
 import lesson.http_jdbc.model.enums.TopCityCount;
@@ -78,7 +79,7 @@ public class AccuweatherClient {
             String json = response.body().string();
             return objectMapper.readValue(json, typeReference);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 }

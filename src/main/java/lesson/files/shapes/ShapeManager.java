@@ -18,9 +18,9 @@ public class ShapeManager {
         return totalArea;
     }
 
-    public void printInfo() {
+    /*public void printInfo() {
         for (Shape shape : shapes) {
             System.out.println(shape.getInfo() + ", area = " + shape.getArea());
         }
-    }
+    }*/
 }

@@ -30,9 +30,9 @@ public class UserFileService {
         return userFileRepository.findAll();
     }
 
-    private List<User> findUsersOver30() {
+    /*private List<User> findUsersOver30() {
         return findAll().stream()
                 .filter(user -> user.getAge() > 30)
                 .toList();
-    }
+    }*/
 }

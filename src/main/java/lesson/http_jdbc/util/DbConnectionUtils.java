@@ -1,5 +1,6 @@
 package lesson.http_jdbc.util;
 
+import lesson.http_jdbc.exeption.MyRuntimeException;
 import lombok.experimental.UtilityClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ public class DbConnectionUtils {
             return connection;
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 

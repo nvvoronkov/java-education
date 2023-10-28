@@ -1,6 +1,6 @@
 package lesson.hibernate;
 
-import lesson.hibernate.entity.Comment;
+import lesson.hibernate.entity.CommentEntity;
 import lesson.hibernate.entity.Post;
 import lesson.hibernate.entity.PostType;
 import lesson.hibernate.utils.HibernateUtils;
@@ -18,10 +18,10 @@ public class App {
             .name("post")
             .postType(PostType.LIFESTYLE)
             .build()
-            .withComment(Comment.builder()
+            .withComment(CommentEntity.builder()
                 .comment("asdasdaga")
                 .build())
-            .withComment(Comment.builder()
+            .withComment(CommentEntity.builder()
                 .comment("hdaaakkl454432")
                 .build());
 

@@ -1,43 +1,15 @@
 package lesson.http_jdbc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lesson.http_jdbc.cache.AccuweatherCache;
-import lesson.http_jdbc.client.AccuweatherClient;
-import lesson.http_jdbc.dao.CityRepository;
-import lesson.http_jdbc.dao.CurrentConditionRepository;
-import lesson.http_jdbc.mapper.CityMapper;
-import lesson.http_jdbc.mapper.CurrentConditionResponseMapper;
-import lesson.http_jdbc.service.AccuweatherService;
-import lesson.http_jdbc.util.DbConnectionUtils;
 import lombok.SneakyThrows;
-import okhttp3.OkHttpClient;
-
-import java.sql.Connection;
-import java.sql.SQLException;
 
 public class App {
 
     @SneakyThrows
     public static void main(final String[] args) {
         Class.forName("org.postgresql.Driver");
-
-        OkHttpClient okHttpClient = new OkHttpClient();
-        ObjectMapper objectMapper = new ObjectMapper();
-        AccuweatherCache accuweatherCache = new AccuweatherCache();
-//        CityMapper cityMapper = new CityMapper();
-//        CurrentConditionResponseMapper conditionResponseMapper = new CurrentConditionResponseMapper();
-//        CityRepository cityRepository = new CityRepository(new CityMapper());
-//        CurrentConditionRepository currentConditionRepository = new CurrentConditionRepository();
-//
-//        AccuweatherClient accuweatherClient = new AccuweatherClient(okHttpClient, objectMapper, accuweatherCache);
-//        AccuweatherService accuweatherService = new AccuweatherService(accuweatherClient, cityRepository,
-//                currentConditionRepository, cityMapper, conditionResponseMapper);
-//
-//        dbInit();
-//
-//        accuweatherService.run();
     }
 
+    /*В чем ошибка?
     private static void dbInit() {
         Connection connection = DbConnectionUtils.getConnection();
         try {
@@ -60,7 +32,7 @@ public class App {
 
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
-    }
+    }*/
 }

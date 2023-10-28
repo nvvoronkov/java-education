@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 //TODO https://mapstruct.org/
 @Mapper
 public interface CityMapper {
-    CityMapper instance = Mappers.getMapper(CityMapper.class);
+    CityMapper INSTANCE = Mappers.getMapper(CityMapper.class);
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "key")

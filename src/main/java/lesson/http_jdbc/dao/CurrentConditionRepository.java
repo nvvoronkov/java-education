@@ -1,9 +1,9 @@
 package lesson.http_jdbc.dao;
 
+import lesson.http_jdbc.exeption.MyRuntimeException;
 import lesson.http_jdbc.model.entity.CurrentConditionEntity;
 import lesson.http_jdbc.util.DbConnectionUtils;
 import lesson.nio.repository.CrudRepository;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class CurrentConditionRepository implements CrudRepository<CurrentConditionEntity, Long> {
     private static final Logger LOGGER = LoggerFactory.getLogger(CurrentConditionRepository.class);
 
-    private static CurrentConditionEntity mapToCurrentConditionEntity(ResultSet resultSet) throws SQLException {
+    private static CurrentConditionEntity mapToCurrentConditionEntity(final ResultSet resultSet) throws SQLException {
         return new CurrentConditionEntity(resultSet.getLong("id"),
             resultSet.getDouble("temp"),
             resultSet.getLong("city_id"));
@@ -36,10 +36,11 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             if (resultSet.next()) {
                 return Optional.of(mapToCurrentConditionEntity(resultSet));
             }
+            resultSet.close();
             return Optional.empty();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -64,11 +65,10 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             return Optional.of(currentConditionEntity);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
-    @NotNull
     private Optional<CurrentConditionEntity> insert(final CurrentConditionEntity currentConditionEntity) {
         var sql = "INSERT INTO current_condition_history (id, temp, city_id) VALUES (?, ?, ?)";
         Connection connection = DbConnectionUtils.getConnection();
@@ -86,7 +86,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             return Optional.of(currentConditionEntity);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -101,7 +101,7 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             connection.commit();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -115,10 +115,10 @@ public class CurrentConditionRepository implements CrudRepository<CurrentConditi
             while (resultSet.next()) {
                 currentConditions.add(mapToCurrentConditionEntity(resultSet));
             }
-
+            resultSet.close();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
         return currentConditions;
     }

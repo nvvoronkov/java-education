@@ -1,12 +1,10 @@
 package lesson.generics;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(final String[] args) {
         String[] names = {"Alice", "Bob", "Charlie"};
         swapElements(names, 0, 2);
-        System.out.println(Arrays.toString(names));
+        /*System.out.println(Arrays.toString(names));*/
 
     }
 

@@ -15,7 +15,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,13 +44,12 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     @Builder.Default
     @ToString.Exclude
-    private List<Comment> commentList = new ArrayList<>();
+    private List<CommentEntity> commentEntityList = new ArrayList<>();
 
-    public Post withComment(@Nullable final Comment comment) {
-        if (nonNull(comment)) {
-            this.commentList.add(comment.setPost(this));
+    public Post withComment(final CommentEntity commentEntity) {
+        if (nonNull(commentEntity)) {
+            this.commentEntityList.add(commentEntity.setPost(this));
         }
         return this;
     }
-
 }

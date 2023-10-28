@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CurrentConditionResponseMapper {
-    CurrentConditionResponseMapper instance = Mappers.getMapper(CurrentConditionResponseMapper.class);
+    CurrentConditionResponseMapper INSTANCE = Mappers.getMapper(CurrentConditionResponseMapper.class);
 
     @Mapping(target = "temp", source = "temperature.metric.value")
     @Mapping(target = "cityId", source = "cityKey")

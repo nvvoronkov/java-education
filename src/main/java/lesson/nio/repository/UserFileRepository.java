@@ -1,5 +1,6 @@
 package lesson.nio.repository;
 
+import lesson.http_jdbc.exeption.MyRuntimeException;
 import lesson.nio.mapper.UserMapper;
 import lesson.nio.model.User;
 import lombok.RequiredArgsConstructor;
@@ -52,7 +53,7 @@ public class UserFileRepository implements CrudRepository<User, Long> {
                     .map(line -> UserMapper.map(line.split(";")))
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            throw new RuntimeException();
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -61,7 +62,7 @@ public class UserFileRepository implements CrudRepository<User, Long> {
             var userLine = UserMapper.toUserLine(users);
             Files.writeString(Paths.get(file.toURI()), userLine, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -70,7 +71,7 @@ public class UserFileRepository implements CrudRepository<User, Long> {
             var userLine = UserMapper.toUserLine(user);
             Files.writeString(Paths.get(file.toURI()), userLine, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 }

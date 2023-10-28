@@ -1,5 +1,7 @@
 package lesson.nio.repository;
 
+import lesson.http_jdbc.exeption.MyRuntimeException;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,14 +18,13 @@ public interface CrudRepository<T, K> {
     List<T> findAll();
 
     default Long getGeneratedKeys(final PreparedStatement preparedStatement) {
-        try {
-            ResultSet rs = preparedStatement.getGeneratedKeys();
+        try (ResultSet rs = preparedStatement.getGeneratedKeys()) {
             if (rs.next()) {
                 return rs.getLong(1);
             }
             return null;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 }

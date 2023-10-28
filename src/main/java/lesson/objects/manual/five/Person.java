@@ -13,8 +13,4 @@ public class Person {
     private String telephone;
     private int salary;
     private int age;
-
-    public void getInfoOfColleague(final Person person) {
-        System.out.println(person.toString());
-    }
 }

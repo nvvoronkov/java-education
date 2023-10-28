@@ -1,10 +1,8 @@
 package lesson.generics.task;
 
-import java.util.List;
-
 public class Main {
     public static void main(final String[] args) {
-        Box<Apple> appleBox1 = new Box<>();
+        /*Box<Apple> appleBox1 = new Box<>();
         appleBox1.addFruit(new Apple());
         appleBox1.addFruit(new Apple());
         appleBox1.addFruit(new Apple());
@@ -34,7 +32,6 @@ public class Main {
         System.out.println(appleBox1.getWeight());
         System.out.println(appleBox2.getWeight());
 
-        appleBox1.addFruit(new Apple());
-//        appleBox1.getFruits();
+        appleBox1.addFruit(new Apple());*/
     }
 }

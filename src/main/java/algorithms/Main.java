@@ -1,42 +1,7 @@
 package algorithms;
 
-import lombok.experimental.UtilityClass;
-
-import java.util.*;
-
-@UtilityClass
 public class Main {
-
-    public static void main(final String[] args) {
-//        int[] arr = {-4, -1, 0, 3, 10};
-//        Main.squareArray(arr);
-//        System.out.println(Arrays.toString(arr));
-//        int[] arr1 = {1, 0, -3, -5, 0, 2};
-//        Main.signCount(arr1);
-//        String arr = "hello";
-//        System.out.println(reverseStringArray(arr));
-//
-//
-        System.out.println(stringAnalitics("abcde", "aec"));
-    }
-
-    /**
-     * Given an integer array nums sorted in non-decreasing order,
-     * return an array of the squares of each number sorted in non-decreasing order.
-     * <p>
-     * <p>
-     * <p>
-     * Example 1:
-     * <p>
-     * Input: nums = [-4,-1,0,3,10]
-     * Output: [0,1,9,16,100]
-     * Explanation: After squaring, the array becomes [16,1,0,9,100].
-     * After sorting, it becomes [0,1,9,16,100].
-     * Example 2:
-     * <p>
-     * Input: nums = [-7,-3,2,3,11]
-     * Output: [4,9,9,49,121]
-     */
+    /*
     public static int[] squareArray(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = arr[i] * arr[i];
@@ -66,7 +31,7 @@ public class Main {
         return count;
     }
 
-    /**
+    *
      * [Task 1]
      * Write a function that reverses a string. The input string is given as an array of characters s.
      * You must do this by modifying the input array in-place with O(1) extra memory.
@@ -78,7 +43,6 @@ public class Main {
      * Example 2:
      * Input: s = ["H","a","n","n","a","h"]
      * Output: ["h","a","n","n","a","H"]
-     */
     //Hello
     public static String reverseStringArray(final String str) {
         char[] arr = str.toCharArray();
@@ -95,7 +59,7 @@ public class Main {
         return new String(arr);
     }
 
-    /**
+    *
      * [Task 2]
      * Given a sorted array of unique integers and a target integer, return true if there
      * exists a pair of numbers that sum to target, false otherwise.
@@ -103,7 +67,6 @@ public class Main {
      * <p>
      * For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13,
      * return true because 4 + 9 = 13.
-     */
     public static boolean hasPairWithSum(final int[] arr, final int target) {
         int left = 0;
         int right = arr.length - 1;
@@ -121,7 +84,7 @@ public class Main {
         return false;
     }
 
-    /**
+    *
      * You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
      * <p>
      * Find two lines that together with the x-axis form a container, such that the container contains the most water.
@@ -139,7 +102,7 @@ public class Main {
      * <p>
      * Input: height = [1,1]
      * Output: 1
-     */
+
     public static double maxSquareOfArray(final int[] arr) {
         int left = 0;
         int right = arr.length - 1;
@@ -159,7 +122,6 @@ public class Main {
         return result;
     }
 
-    //TODO:
     //Example 2: 2351. First Letter to Appear Twice
     //
     //Given a string s, return the first character to appear twice. It is guaranteed that the input will have a duplicate character.
@@ -174,122 +136,5 @@ public class Main {
             }
         }
         return '0';
-    }
-
-    //TODO
-    //A pangram is a sentence where every letter of the English alphabet appears at least once.
-    //
-    //Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
-    //
-    //
-    //
-    //Example 1:
-    //
-    //Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
-    //Output: true
-    //Explanation: sentence contains at least one of every letter of the English alphabet.
-    //Example 2:
-    //
-    //Input: sentence = "leetcode"
-    //Output: false
-    //
-    //
-    //Constraints:
-    //
-    //1 <= sentence.length <= 1000
-    //sentence consists of lowercase English letters.
-    public boolean isPangram(final String sentence) {
-        Set<Character> set = new HashSet<>();
-        char[] charArray = sentence.toCharArray();
-        for (char c : charArray) {
-            if (c >= 'a' && c <= 'z') {
-                set.add(c);
-            }
-        }
-        return set.size() == 26;
-    }
-
-    //"hello"
-    public char getDuplicateChar(final String string) {
-        char[] array = string.toCharArray();
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    return array[j];
-                }
-            }
-        }
-        return '0';
-    }
-
-    public char getDuplicateCharSet(final String string) {
-        char[] array = string.toCharArray();
-        Set<Character> set = new HashSet<>();
-        for (int i = 0; i < array.length; i++) {
-            if (set.contains(array[i])) {
-                return array[i];
-            }
-            set.add(array[i]);
-        }
-        return '0';
-    }
-
-    /**
-     * Даны две строки s и t. Вернуть true, если s является подпоследовательностью t, и false в противном случае.
-     * <p>
-     * Подпоследовательность строки - это последовательность символов, которую можно получить путем удаления некоторых
-     * (или ни одного) символов из исходной строки, сохраняя при этом относительный порядок оставшихся символов.
-     * Например, "ace" является подпоследовательностью "abcde", а "aec" - нет.
-     */
-    //{a, b, c, d, e}
-    //{a, c, e}
-    //нам нужно чтобы каждая итерация проверяла символ на следующий
-    //если a = a то идем дальше б = e? нет значит с = е?
-    // нет, идем дальше d = e нет, e равно e ? да, но в инпут строке еще есть символы
-    public boolean stringAnalitics(final String s, final String t) {
-        char[] string = s.toCharArray();
-        char[] input = t.toCharArray();
-        int count = 0;
-        do {
-            for (int i = 0; i < s.length(); i++) {
-                if (string[i] == input[count]) {
-                    count++;
-                }
-                if (count == t.length()) {
-                    return true;
-                }
-            }
-        } while (count < t.length() - 1);
-        return false;
-    }
-
-    /**
-     * Для двух заданных отсортированных в возрастающем порядке целочисленных массивов A и B
-     * длин n и m соответственно, найти пару самых близких между собой по значению элементов.
-     * Более формально: найти такие элементы A[i] и B[j], что их модуль разности минимален
-     * по сравнению с другими парами элементов из этих массивов.
-     * <p>
-     * Пример. Для заданных массивов {1, 2, 10} и {8, 20, 30} ответом будет пара чисел 10 и 8.
-     */
-    public void twoArrays() {
-
-    }
-
-    /**
-     * Пример 1: Дан массив положительных целых чисел nums и целое число k.
-     * Найти длину самой длинной подмассива, сумма элементов которого меньше или равна k.
-     * Это задача, о которой мы говорили выше. Мы теперь формально решим ее.
-     * <p>
-     * Давайте используем целое число curr, которое отслеживает сумму текущего окна.
-     * Поскольку задача требует подмассивы, сумма элементов которых меньше или равна k,
-     * мы хотим поддерживать curr <= k. Рассмотрим пример, где nums = [3, 1, 2, 7, 4, 2, 1, 1, 5], а k = 8.
-     */
-    //бежим по массиву и считаем сумму последующих элементов, если она больше к то останавливаемся и
-    //считаем длину с предыдущим элементом, прихравниваем и бежим со следующего i
-    //если следующая сумма больше то перезаписываем в лист
-    public List<Integer> arraysAndChar(final int[] array, final int k) {
-        List<Integer> resultList = new ArrayList<>();
-
-        return resultList;
-    }
+    }*/
 }

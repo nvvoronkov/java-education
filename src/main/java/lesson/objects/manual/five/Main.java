@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Main {
     public static void main(final String[] args) {
-        Person[] personArr = {
+        /*Person[] personArr = {
                 new Person(1, "Ivanov Ivan", "Engineer", "ivivan@mailbox.com",
                         "892312312", 30000, 30),
                 new Person(2, "Volkov Ivan Ivanovich", "Engineer", "volkov@mailbox.com",
@@ -22,6 +22,6 @@ public class Main {
             if (allPersons.getAge() > 40) {
                 allPersons.getInfoOfColleague(allPersons);
             }
-        }
+        }*/
     }
 }

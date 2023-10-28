@@ -4,8 +4,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Main {
-    public static void main(final String[] args) {
-    }
 
     public static List<Course> getUniqueCourses(final List<Student> students) {
         return students.stream()

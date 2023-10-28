@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Entity
 @Table(name = "comment")
-public class Comment {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,5 +35,4 @@ public class Comment {
     @JoinColumn(name = "post_id", foreignKey = @ForeignKey(name = "fk_comment_post"))
     @ToString.Exclude
     private Post post;
-
 }

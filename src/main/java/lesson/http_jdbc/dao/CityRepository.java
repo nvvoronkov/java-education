@@ -1,5 +1,6 @@
 package lesson.http_jdbc.dao;
 
+import lesson.http_jdbc.exeption.MyRuntimeException;
 import lesson.http_jdbc.mapper.CityMapper;
 import lesson.http_jdbc.model.entity.CityEntity;
 import lesson.http_jdbc.util.DbConnectionUtils;
@@ -30,10 +31,11 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             if (resultSet.next()) {
                 return Optional.of(cityMapper.toEntity(resultSet));
             }
+            resultSet.close();
             return Optional.empty();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -52,7 +54,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             return Optional.of(cityEntity);
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
 
     }
@@ -68,7 +70,7 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             connection.commit();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
 
@@ -83,11 +85,11 @@ public class CityRepository implements CrudRepository<CityEntity, Long> {
             while (resultSet.next()) {
                 cities.add(cityMapper.toEntity(resultSet));
             }
+            resultSet.close();
             return cities;
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
-            throw new RuntimeException(e);
+            throw new MyRuntimeException(e.getMessage());
         }
     }
-
 }
