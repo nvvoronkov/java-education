@@ -1,72 +1,49 @@
 package lesson.hibernate.dao;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaDelete;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import lesson.hibernate.entity.PostEntity;
 import lesson.hibernate.utils.HibernateUtils;
-import lesson.nio.repository.CrudRepository;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import java.util.List;
 import java.util.Optional;
 
 public class PostDao implements CrudRepository<PostEntity, Long> {
-    private final SessionFactory sessionFactory;
-
-    public PostDao() {
-        sessionFactory = HibernateUtils.getSessionFactory();
-    }
 
     @Override
     public Optional<PostEntity> findById(final Long id) {
-        Session session = sessionFactory.openSession();
-        Optional<PostEntity> postEntity = Optional.ofNullable(session.get(PostEntity.class, id));
-        session.close();
-        return postEntity;
-
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            return Optional.ofNullable(session.get(PostEntity.class, id));
+        }
     }
 
     @Override
-    public Optional<PostEntity> save(final PostEntity postEntity) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        PostEntity newPost = PostEntity.builder()
-            .name(postEntity.getName())
-            .postType(postEntity.getPostType())
-            .commentEntityList(postEntity.getCommentEntityList())
-            .build();
-
-        session.persist(newPost);
-
-        transaction.commit();
-        session.close();
-        return Optional.ofNullable(newPost);
+    public PostEntity save(final PostEntity postEntity) {
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.merge(postEntity);
+            transaction.commit();
+            return postEntity;
+        }
     }
 
     @Override
     public void delete(final Long id) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-        CriteriaDelete<PostEntity> postDelete = criteriaBuilder.createCriteriaDelete(PostEntity.class);
-        Root<PostEntity> postRoot = postDelete.from(PostEntity.class);
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
 
-        postDelete.where(criteriaBuilder.equal(postRoot.get("id"), id));
+            session.remove(session.get(PostEntity.class, id));
 
-        session.persist(postDelete);
-
-        transaction.commit();
-        session.close();
+            transaction.commit();
+        }
     }
 
     @Override
     public List<PostEntity> findAll() {
-        Session session = sessionFactory.openSession();
+        Session session = HibernateUtils.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<PostEntity> criteriaQuery = criteriaBuilder.createQuery(PostEntity.class);
         Root<PostEntity> postRoot = criteriaQuery.from(PostEntity.class);

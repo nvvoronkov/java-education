@@ -1,11 +1,12 @@
 package lesson.hibernate;
 
+import lesson.hibernate.dao.CommentDao;
+import lesson.hibernate.dao.PostDao;
 import lesson.hibernate.entity.CommentEntity;
 import lesson.hibernate.entity.PostEntity;
 import lesson.hibernate.entity.PostType;
-import lesson.hibernate.utils.HibernateUtils;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+
+import java.util.List;
 
 // todo: https://www.geeksforgeeks.org/hibernate-lifecycle/
 
@@ -19,16 +20,31 @@ public class App {
             .postType(PostType.LIFESTYLE)
             .build()
             .withComment(CommentEntity.builder()
-                .comment("asdasdaga")
-                .build())
+                .comment("123")
+                .build());
+        PostEntity postEntity1 = PostEntity.builder()
+            .name("post")
+            .postType(PostType.LIFESTYLE)
+            .build()
             .withComment(CommentEntity.builder()
-                .comment("hdaaakkl454432")
+                .comment("123")
+                .build());
+        PostEntity postEntity2 = PostEntity.builder()
+            .name("post")
+            .postType(PostType.LIFESTYLE)
+            .build()
+            .withComment(CommentEntity.builder()
+                .comment("123")
                 .build());
 
-        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
-            session.persist(postEntity);
-            transaction.commit();
-        }
+        PostDao postDao = new PostDao();
+        postDao.save(postEntity);
+        postDao.save(postEntity1);
+        postDao.save(postEntity2);
+
+        CommentDao commentDao = new CommentDao();
+        List<CommentEntity> commentDaoAll = commentDao.findAll();
+        commentDaoAll.forEach(System.out::println);
+
     }
 }
