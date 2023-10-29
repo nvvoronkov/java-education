@@ -28,7 +28,7 @@ import static java.util.Objects.nonNull;
 
 @Entity
 @Table(name = "post")
-public class Post {
+public class PostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -46,9 +46,9 @@ public class Post {
     @ToString.Exclude
     private List<CommentEntity> commentEntityList = new ArrayList<>();
 
-    public Post withComment(final CommentEntity commentEntity) {
+    public PostEntity withComment(final CommentEntity commentEntity) {
         if (nonNull(commentEntity)) {
-            this.commentEntityList.add(commentEntity.setPost(this));
+            this.commentEntityList.add(commentEntity.setPostEntity(this));
         }
         return this;
     }

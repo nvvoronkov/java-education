@@ -34,5 +34,5 @@ public class CommentEntity {
     @ManyToOne
     @JoinColumn(name = "post_id", foreignKey = @ForeignKey(name = "fk_comment_post"))
     @ToString.Exclude
-    private Post post;
+    private PostEntity postEntity;
 }

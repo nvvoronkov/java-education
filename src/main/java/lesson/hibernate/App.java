@@ -1,7 +1,7 @@
 package lesson.hibernate;
 
 import lesson.hibernate.entity.CommentEntity;
-import lesson.hibernate.entity.Post;
+import lesson.hibernate.entity.PostEntity;
 import lesson.hibernate.entity.PostType;
 import lesson.hibernate.utils.HibernateUtils;
 import org.hibernate.Session;
@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
 // todo: n + 1, Lazy vs Eager
 public class App {
     public static void main(final String[] args) {
-        Post post = Post.builder()
+        PostEntity postEntity = PostEntity.builder()
             .name("post")
             .postType(PostType.LIFESTYLE)
             .build()
@@ -27,7 +27,7 @@ public class App {
 
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.persist(post);
+            session.persist(postEntity);
             transaction.commit();
         }
     }
