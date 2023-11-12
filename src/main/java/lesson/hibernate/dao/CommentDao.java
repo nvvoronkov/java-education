@@ -12,7 +12,9 @@ public class CommentDao implements CrudRepository<CommentEntity, Long> {
 
     @Override
     public Optional<CommentEntity> findById(final Long id) {
-        return Optional.empty();
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            return Optional.ofNullable(session.get(CommentEntity.class, id));
+        }
     }
 
     @Override

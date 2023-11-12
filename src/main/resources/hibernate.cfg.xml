@@ -15,5 +15,6 @@
 
         <mapping class="lesson.hibernate.entity.PostEntity"/>
         <mapping class="lesson.hibernate.entity.CommentEntity"/>
+        <mapping class="lesson.hibernate.entity.UserEntity"/>
     </session-factory>
 </hibernate-configuration>

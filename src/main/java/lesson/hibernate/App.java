@@ -2,11 +2,14 @@ package lesson.hibernate;
 
 import lesson.hibernate.dao.CommentDao;
 import lesson.hibernate.dao.PostDao;
+import lesson.hibernate.dao.UserDao;
 import lesson.hibernate.entity.CommentEntity;
 import lesson.hibernate.entity.PostEntity;
 import lesson.hibernate.entity.PostType;
-
-import java.util.List;
+import lesson.hibernate.entity.UserEntity;
+import lesson.hibernate.service.CommentService;
+import lesson.hibernate.service.PostService;
+import lesson.hibernate.service.UserService;
 
 // todo: https://www.geeksforgeeks.org/hibernate-lifecycle/
 
@@ -15,36 +18,62 @@ import java.util.List;
 // todo: n + 1, Lazy vs Eager
 public class App {
     public static void main(final String[] args) {
-        PostEntity postEntity = PostEntity.builder()
-            .name("post")
-            .postType(PostType.LIFESTYLE)
-            .build()
-            .withComment(CommentEntity.builder()
-                .comment("123")
-                .build());
-        PostEntity postEntity1 = PostEntity.builder()
-            .name("post")
-            .postType(PostType.LIFESTYLE)
-            .build()
-            .withComment(CommentEntity.builder()
-                .comment("123")
-                .build());
-        PostEntity postEntity2 = PostEntity.builder()
-            .name("post")
-            .postType(PostType.LIFESTYLE)
-            .build()
-            .withComment(CommentEntity.builder()
-                .comment("123")
-                .build());
-
         PostDao postDao = new PostDao();
-        postDao.save(postEntity);
-        postDao.save(postEntity1);
-        postDao.save(postEntity2);
+        PostService postService = new PostService(postDao);
 
         CommentDao commentDao = new CommentDao();
-        List<CommentEntity> commentDaoAll = commentDao.findAll();
-        commentDaoAll.forEach(System.out::println);
+        CommentService commentService = new CommentService(commentDao);
+
+        UserDao userDao = new UserDao();
+        UserService userService = new UserService(userDao);
+
+        PostEntity post1 = PostEntity.builder()
+            .name("post")
+            .postType(PostType.LIFESTYLE)
+            .build()
+            .withComment(CommentEntity.builder()
+                .comment("123")
+                .build());
+
+        UserEntity user1 = UserEntity.builder()
+            .name("Nikita")
+            .email("1234@mail.ru")
+            .build()
+            .withPost(post1);
+
+        PostEntity post2 = PostEntity.builder()
+            .name("post post")
+            .postType(PostType.LIFESTYLE)
+            .build()
+            .withComment(CommentEntity.builder()
+                .comment("123")
+                .build());
+
+        UserEntity user2 = UserEntity.builder()
+            .name("Max")
+            .email("1234@mail.ru")
+            .build();
+
+        UserEntity user3 = UserEntity.builder()
+            .id(2L)
+            .name("Max")
+            .email("1234@mail.ru")
+            .build()
+            .withPost(post2);
+
+        CommentEntity comment1 = CommentEntity.builder()
+            .comment("hello")
+            .postEntity(post2)
+            .build();
+
+        userService.addOrUpdateUser(user2);
+        userService.addOrUpdateUser(user1);
+        userService.addOrUpdateUser(user3);
+        commentService.addOrUpdateComment(comment1);
+
+        userService.findUserHavingMostPosts();
+        postService.findMostCommentedPost();
+
 
     }
 }
