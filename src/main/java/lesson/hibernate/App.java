@@ -12,7 +12,6 @@ import lesson.hibernate.service.PostService;
 import lesson.hibernate.service.UserService;
 
 // todo: https://www.geeksforgeeks.org/hibernate-lifecycle/
-
 // todo: insert, update, remove
 // todo: session/session factory/ transaction/ какими способами мы можем получить данные из БД через хибер
 // todo: n + 1, Lazy vs Eager
@@ -73,7 +72,5 @@ public class App {
 
         userService.findUserHavingMostPosts();
         postService.findMostCommentedPost();
-
-
     }
 }

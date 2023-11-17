@@ -17,12 +17,12 @@ public class UserServlet extends HttpServlet {
     private UserService userService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         UserDao userDao = new UserDao();
         userService = new UserService(userDao);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
 
         if (pathInfo == null) {
@@ -34,7 +34,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
         String pathInfo = request.getPathInfo();
 
         if (pathInfo != null && pathInfo.equals("/add")) {
