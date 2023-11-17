@@ -1,6 +1,6 @@
 package lesson.hibernate.service;
 
-import lesson.hibernate.dao.PostDao;
+import lesson.hibernate.dao.PostRepository;
 import lesson.hibernate.entity.PostEntity;
 import lesson.hibernate.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,8 @@ import java.util.Optional;
 @Slf4j
 @RequiredArgsConstructor
 public class PostService {
-    private final PostDao postDao;
+//    private final PostDao postDao;
+    private final PostRepository postDao;
 
     public void addOrUpdatePost(final PostEntity post) {
         if (post.getId() == null) {

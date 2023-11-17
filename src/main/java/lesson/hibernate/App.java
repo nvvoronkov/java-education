@@ -2,6 +2,7 @@ package lesson.hibernate;
 
 import lesson.hibernate.dao.CommentDao;
 import lesson.hibernate.dao.PostDao;
+import lesson.hibernate.dao.PostRepository;
 import lesson.hibernate.dao.UserDao;
 import lesson.hibernate.entity.CommentEntity;
 import lesson.hibernate.entity.PostEntity;
@@ -18,7 +19,8 @@ import lesson.hibernate.service.UserService;
 public class App {
     public static void main(final String[] args) {
         PostDao postDao = new PostDao();
-        PostService postService = new PostService(postDao);
+        PostRepository postRepository = new PostRepository();
+        PostService postService = new PostService(postRepository);
 
         CommentDao commentDao = new CommentDao();
         CommentService commentService = new CommentService(commentDao);

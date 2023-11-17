@@ -1,5 +1,8 @@
 package lesson.hibernate.utils;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import lombok.experimental.UtilityClass;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
@@ -16,6 +19,7 @@ public class HibernateUtils {
 
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
+    private static EntityManagerFactory entityManagerFactory;
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -32,5 +36,10 @@ public class HibernateUtils {
             }
         }
         return sessionFactory;
+    }
+
+    public static EntityManager getEntityManager() {
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("JAVA");
+        return entityManagerFactory.createEntityManager();
     }
 }

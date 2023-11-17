@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class CommentDao implements CrudRepository<CommentEntity, Long> {
-
     @Override
     public Optional<CommentEntity> findById(final Long id) {
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
@@ -42,4 +41,5 @@ public class CommentDao implements CrudRepository<CommentEntity, Long> {
             return session.createQuery("from CommentEntity", CommentEntity.class).list();
         }
     }
+
 }
