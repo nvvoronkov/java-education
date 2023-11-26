@@ -13,7 +13,7 @@ import java.util.Optional;
 @Slf4j
 @RequiredArgsConstructor
 public class PostService {
-//    private final PostDao postDao;
+    /*private final PostDao postDao;*/
     private final PostRepository postDao;
 
     public void addOrUpdatePost(final PostEntity post) {

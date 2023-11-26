@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
             List<UserEntity> users = userService.getListOfUsers();
             request.setAttribute("users", users);
             request.getRequestDispatcher("/user-list.jsp").forward(request, response);
-        } else if (pathInfo.equals("/add")) {
+        } else if ("/add".equals(pathInfo)) {
             request.getRequestDispatcher("/user-add.jsp").forward(request, response);
         }
     }
@@ -37,7 +37,7 @@ public class UserServlet extends HttpServlet {
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
         String pathInfo = request.getPathInfo();
 
-        if (pathInfo != null && pathInfo.equals("/add")) {
+        if (pathInfo != null && "/add".equals(pathInfo)) {
             String name = request.getParameter("name");
             String email = request.getParameter("email");
 

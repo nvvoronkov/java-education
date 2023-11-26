@@ -19,7 +19,6 @@ public class HibernateUtils {
 
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
-    private static EntityManagerFactory entityManagerFactory;
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {

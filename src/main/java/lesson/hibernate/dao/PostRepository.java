@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public class PostRepository {
     EntityManager em = HibernateUtils.getEntityManager();
+
     public Optional<PostEntity> findById(final Long id) {
         em.getTransaction().begin();
         CriteriaBuilder cb = em.getCriteriaBuilder();

@@ -1,7 +1,6 @@
 package lesson.hibernate;
 
 import lesson.hibernate.dao.CommentDao;
-import lesson.hibernate.dao.PostDao;
 import lesson.hibernate.dao.PostRepository;
 import lesson.hibernate.dao.UserDao;
 import lesson.hibernate.entity.CommentEntity;
@@ -18,12 +17,9 @@ import lesson.hibernate.service.UserService;
 // todo: n + 1, Lazy vs Eager
 public class App {
     public static void main(final String[] args) {
-        PostDao postDao = new PostDao();
-        PostRepository postRepository = new PostRepository();
-        PostService postService = new PostService(postRepository);
+        /*PostDao postDao = new PostDao();*/
 
         CommentDao commentDao = new CommentDao();
-        CommentService commentService = new CommentService(commentDao);
 
         UserDao userDao = new UserDao();
         UserService userService = new UserService(userDao);
@@ -62,16 +58,18 @@ public class App {
             .build()
             .withPost(post2);
 
+        userService.addOrUpdateUser(user2);
+        userService.addOrUpdateUser(user1);
+        userService.addOrUpdateUser(user3);
+
+        CommentService commentService = new CommentService(commentDao);
         CommentEntity comment1 = CommentEntity.builder()
             .comment("hello")
             .postEntity(post2)
             .build();
-
-        userService.addOrUpdateUser(user2);
-        userService.addOrUpdateUser(user1);
-        userService.addOrUpdateUser(user3);
         commentService.addOrUpdateComment(comment1);
-
+        PostRepository postRepository = new PostRepository();
+        PostService postService = new PostService(postRepository);
         userService.findUserHavingMostPosts();
         postService.findMostCommentedPost();
     }
