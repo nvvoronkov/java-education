@@ -14,7 +14,7 @@ public class PostRepository {
     EntityManager em = HibernateUtils.getEntityManager();
 
     public Optional<PostEntity> findById(final Long id) {
-        em.getTransaction().begin();
+//        em.getTransaction().begin();
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<PostEntity> query = cb.createQuery(PostEntity.class);
         Root<PostEntity> root = query.from(PostEntity.class);
@@ -23,7 +23,7 @@ public class PostRepository {
             .where(cb.equal(root.get("id"), id));
 
         Optional<PostEntity> result = Optional.ofNullable(em.createQuery(query).getSingleResult());
-        em.getTransaction().commit();
+//        em.getTransaction().commit();
         return result;
     }
 
@@ -45,15 +45,19 @@ public class PostRepository {
     }
 
     public List<PostEntity> findAll() {
-        em.getTransaction().begin();
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<PostEntity> query = cb.createQuery(PostEntity.class);
-        Root<PostEntity> root = query.from(PostEntity.class);
+        try (EntityManager entityManager = HibernateUtils.getEntityManager()) {
+            entityManager.getTransaction().begin();
+            CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+            CriteriaQuery<PostEntity> query = cb.createQuery(PostEntity.class);
+            Root<PostEntity> root = query.from(PostEntity.class);
 
-        query.select(root);
+            query.select(root);
 
-        List<PostEntity> resultList = em.createQuery(query).getResultList();
-        em.getTransaction().commit();
-        return resultList;
+            List<PostEntity> resultList = entityManager.createQuery(query).getResultList();
+            entityManager.getTransaction().commit();
+            return resultList;
+        }
+
+
     }
 }

@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 public interface CurrentConditionResponseMapper {
     CurrentConditionResponseMapper INSTANCE = Mappers.getMapper(CurrentConditionResponseMapper.class);
 
-    @Mapping(target = "temp", source = "temperature.metric.value")
+    @Mapping(target = "temp", source = "condition.temperature.metric.value")
     @Mapping(target = "cityId", source = "cityKey")
     CurrentConditionEntity toEntity(CurrentConditionResponse condition, Long cityKey);
 }

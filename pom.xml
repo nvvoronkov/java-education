@@ -16,8 +16,9 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <java.version>19</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <assertj-core.version>3.23.1</assertj-core.version>

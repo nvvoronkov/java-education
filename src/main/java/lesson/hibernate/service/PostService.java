@@ -6,7 +6,6 @@ import lesson.hibernate.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,10 +53,10 @@ public class PostService {
     public Optional<PostEntity> findMostCommentedPost() {
         List<PostEntity> postList = getListOfPosts();
 
-        Optional<PostEntity> postEntity = postList.stream()
-            .max(Comparator.comparingInt(post -> post.getCommentEntityList().size()));
-        log.info("Пост с названием - " + postEntity.map(PostEntity::getName) + " имеет наибольшее количество комментариев.");
-        return postEntity;
+//        Optional<PostEntity> postEntity = postList.stream()
+//            .max(Comparator.comparingInt(post -> post.getCommentEntityList().size()));
+//        log.info("Пост с названием - " + postEntity.map(PostEntity::getName) + " имеет наибольшее количество комментариев.");
+        return null;
     }
 
     private boolean isUserInBase(final PostEntity postEntity) {

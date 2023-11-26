@@ -9,8 +9,6 @@ import org.mapstruct.factory.Mappers;
 
 import java.sql.ResultSet;
 
-
-//TODO https://mapstruct.org/
 @Mapper
 public interface CityMapper {
     CityMapper INSTANCE = Mappers.getMapper(CityMapper.class);
@@ -21,7 +19,5 @@ public interface CityMapper {
     CityEntity toEntity(LocationsRoot locationsRoot);
 
     @BeanMapping(ignoreByDefault = true)
-    @Mapping(target = "id", source = "id")
-    @Mapping(target = "name", source = "name")
     CityEntity toEntity(ResultSet resultSet);
 }

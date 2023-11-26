@@ -27,6 +27,7 @@ import static java.util.Objects.nonNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
+@ToString
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +37,9 @@ public class UserEntity {
 
     private String email;
 
-    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @Builder.Default
     @ToString.Exclude
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PostEntity> postEntityList = new ArrayList<>();
 
     public UserEntity withPost(final PostEntity postEntity) {

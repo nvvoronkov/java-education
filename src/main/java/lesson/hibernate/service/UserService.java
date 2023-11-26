@@ -26,7 +26,7 @@ public class UserService {
     }
 
     public void deleteUser(final Long id) {
-        if (isUserInBase(id)) {
+        if (findById(id) != null) {
             userDao.delete(id);
             log.info("пользователь с id " + id + " удален");
         }
@@ -59,19 +59,8 @@ public class UserService {
         return userEntity;
     }
 
-    private boolean isUserInBase(final UserEntity userEntity) {
-        if (userEntity.getId() == null) {
-            log.info("пользователя нет в базе");
-            throw new UserNotFoundException("пользователя с id = " + userEntity.getId() + " нет в базе");
-        }
-        return true;
-    }
-
-    private boolean isUserInBase(final Long id) {
-        if (userDao.findById(id).isEmpty()) {
-            log.info("пользователя с id = " + id + " нет в базе");
-            throw new UserNotFoundException("пользователя с id = " + id + " нет в базе");
-        }
-        return true;
+    public UserEntity findById(final Long id) {
+        return userDao.findById(id)
+            .orElseThrow(() -> new UserNotFoundException("пользователя с id = " + id + " нет в базе"));
     }
 }
